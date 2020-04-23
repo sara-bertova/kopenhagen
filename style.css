@@ -1,0 +1,11 @@
+@import url("https://use.typekit.net/qkz3byl.css");
+
+:root {
+    --bg-color: #ECEFF4;
+    --primary-font: mr-eaves-xl-modern, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--primary-font);
+}

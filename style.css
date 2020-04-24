@@ -28,6 +28,27 @@ body {
     animation: cursorAnim .5s infinite alternate;
 }
 
+#topBtn{
+    /*display: none;*/
+    background: url(icons/btn-16.png);
+
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    z-index: 99;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    margin: 30px 0px;
+    transition: .5s;
+}
+#topBtn:hover{
+    background: url(icons/btn-17.png);
+}
+
 header{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));

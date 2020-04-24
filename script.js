@@ -16,8 +16,8 @@ function showNav(nav) {
     console.log(nav.name)
 
     const cat = document.createElement("a");
-    cat.textContent = `${nav.name}` + " / ";
-
+    cat.textContent = nav.name;
+    cat.href = "category.html?cat_id=" + nav.id
 
     document.querySelector(".navm").appendChild(cat);
 }

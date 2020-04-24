@@ -2,10 +2,17 @@
 
 :root {
     --bg-color: #ECEFF4;
+    --text-color: #13064E;
     --primary-font: mr-eaves-xl-modern, sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     font-family: var(--primary-font);
+    color: var(--text-color);
+}
+
+nav a {
+    margin: 0 14px;
+    text-decoration: none;
 }

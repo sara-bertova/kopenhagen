@@ -21,3 +21,13 @@ function showNav(nav) {
 
     document.querySelector(".navm").appendChild(cat);
 }
+
+//CURSOR
+const cursor = document.querySelector(".cursor")
+
+//everytime mouse moves, adjust style attribute
+//change cursor position to mouse position based on mouse move
+//pageY and pageX return the locetion of cursor on the page
+document.addEventListener("mousemove", e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})

@@ -10,6 +10,19 @@ body {
     background-color: var(--bg-color);
     font-family: var(--primary-font);
     color: var(--text-color);
+
+    cursor: none;
+}
+
+.cursor{
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
 }
 
 nav a {

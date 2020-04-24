@@ -1,4 +1,4 @@
-fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=10&orderby=description")
+fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=10&orderby=id")
     .then(function (response) {
         return response.json()
     })
@@ -7,6 +7,7 @@ fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=10&orderby=descript
     })
 
 function handleData(jsonData) {
+    jsonData.reverse();
     jsonData.forEach(showNav)
 
 }

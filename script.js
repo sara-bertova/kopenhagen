@@ -17,5 +17,6 @@ function showNav(nav) {
     const cat = document.createElement("a");
     cat.textContent = `${nav.name}` + " / ";
 
+
     document.querySelector(".navm").appendChild(cat);
 }

@@ -50,11 +50,15 @@ body {
 }
 
 header{
+    margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     align-items: center;
 }
 
+#logo{
+    margin-left: 25px;
+}
 #logo path:nth-child(2){
     stroke-dasharray: 275;
     stroke-dashoffset: 275;

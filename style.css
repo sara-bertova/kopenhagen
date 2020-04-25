@@ -14,7 +14,7 @@ body {
     font-family: var(--primary-font);
     color: var(--text-color);
 
-    cursor: none;
+    /*cursor: none;*/
 }
 
 .cursor{
@@ -26,6 +26,7 @@ body {
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     animation: cursorAnim .5s infinite alternate;
+    z-index: 100;
 }
 
 #topBtn{
@@ -139,8 +140,9 @@ header{
 nav a {
     margin-right: 100px;
     text-decoration: none;
-
+    color: var(--text-color);
     font-size: 25px;
+    transition: .5s;
 }
 nav a:hover{
     color: var(--red-color);

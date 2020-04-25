@@ -22,15 +22,30 @@ function showNav(nav) {
     document.querySelector(".navm").appendChild(cat);
 }
 
-//CURSOR
-const cursor = document.querySelector(".cursor")
+//Artists slider
+fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        handleArtistsData(data)
+    })
 
-//everytime mouse moves, adjust style attribute
-//change cursor position to mouse position based on mouse move
-//pageY and pageX return the locetion of cursor on the page
-document.addEventListener("mousemove", e => {
-    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
-})
+function handleArtistsData(jsonData) {
+    jsonData.reverse();
+    jsonData.forEach(showArt)
+
+}
+
+function showArt(art) {
+
+    const template = document.querySelector("template").content;
+
+    var copy = template.cloneNode(true);
+
+    copy.querySelector(".artist-name").textContent = art.title.rendered;
+    $('.artists').slick('slickAdd', copy);
+}
 
 /*-------GO TO TOP BTN------------------------------*/
 
@@ -56,3 +71,15 @@ function topFunction() { // eslint-disable-line no-unused-vars
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+/*
+
+//CURSOR
+const cursor = document.querySelector(".cursor")
+
+//everytime mouse moves, adjust style attribute
+//change cursor position to mouse position based on mouse move
+//pageY and pageX return the locetion of cursor on the page
+document.addEventListener("mousemove", e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+*/

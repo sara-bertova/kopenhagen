@@ -37,6 +37,7 @@ body {
     background-color: var(--yellow-color);
     text-align: center;
     align-items: center;
+    padding: 10px;
 
 }
 .artist-name{

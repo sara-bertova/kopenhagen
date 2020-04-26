@@ -19,7 +19,8 @@ body {
 
 .slider {
     width: 70%;
-    margin: 100px auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .artist-item{
     background: white;

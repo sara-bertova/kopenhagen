@@ -1,0 +1,79 @@
+fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=13&orderby=id")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        handleData(data)
+    })
+
+function handleData(jsonData) {
+    jsonData.reverse();
+    jsonData.forEach(showNav)
+
+}
+
+
+//Nav menu
+function showNav(nav) {
+    console.log(nav.name)
+
+    const cat = document.createElement("a");
+    cat.textContent = nav.name;
+
+
+    if (nav.name == "Contact") {
+        cat.href = "contact.html"
+    } else {
+        cat.href = "category.html?cat_id=" + nav.id;
+    }
+
+    document.querySelector(".navm").appendChild(cat);
+}
+
+
+
+/*fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        handleCat(data)
+    })
+
+function handleCat(jsonData) {
+    jsonData.forEach(createMonths)
+}
+function createMonths(oneMon) {
+        console.log(oneMon)
+        const a = document.createElement("a");
+        a.setAttribute("href", `#${oneCat}`);
+        document.querySelector("header>nav").appendChild(a);
+        a.textContent = oneCat;
+        const section = document.createElement("section");
+        section.id = oneCat;
+        const h2 = document.createElement("h2");
+        h2.textContent = oneMon.name;
+        document.querySelector("#calendar").appendChild(h2);
+    }*/
+
+/*fetch("https://kea-alt-del.dk/t5/api/categories")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        createCategories(data)
+    })
+
+function createCategories(jsonData) {
+    jsonData.forEach(function (oneCat) {
+        const a = document.createElement("a");
+        a.setAttribute("href", `#${oneCat}`);
+        document.querySelector("header>nav").appendChild(a);
+        a.textContent = oneCat;
+        const section = document.createElement("section");
+        section.id = oneCat;
+        const h2 = document.createElement("h2");
+        h2.textContent = oneCat;
+        section.appendChild(h2);
+        document.querySelector("main").appendChild(section);
+    })}*/

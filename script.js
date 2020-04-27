@@ -1,4 +1,4 @@
-fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=10&orderby=id")
+fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=13&orderby=id")
     .then(function (response) {
         return response.json()
     })

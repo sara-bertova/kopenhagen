@@ -13,7 +13,7 @@ function handleData(jsonData) {
 }
 
 
-//Nav menu
+//NAV MENU
 function showNav(nav) {
     console.log(nav.name)
 
@@ -30,28 +30,29 @@ function showNav(nav) {
     document.querySelector(".navm").appendChild(cat);
 }
 
-//AUTOMATIC SLIDESHOW - for upcoming events
-var slideIndex = 0;
-showSlides();
+//DYNAMIC MONTHS IN CALENDAR
+fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        handleCat(data)
+    })
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
+function handleCat(jsonData) {
+    jsonData.forEach(createMonths)
 }
+function createMonths(oneMon) {
+        console.log(oneMon)
+
+        const h2 = document.createElement("h2");
+        h2.textContent = oneMon.name;
+        h2.classList.add("blue-heading");
+        document.querySelector("#calendar").appendChild(h2);
+    }
+
+
+
 
 
 //Artists slider
@@ -136,6 +137,31 @@ function topFunction() { // eslint-disable-line no-unused-vars
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
+//AUTOMATIC SLIDESHOW - for upcoming events
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
 /*
 
 //CURSOR

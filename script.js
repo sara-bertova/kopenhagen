@@ -12,6 +12,8 @@ function handleData(jsonData) {
 
 }
 
+
+//Nav menu
 function showNav(nav) {
     console.log(nav.name)
 
@@ -22,11 +24,12 @@ function showNav(nav) {
     if (nav.name == "Contact") {
         cat.href = "contact.html"
     } else {
-        cat.href = "category.html?cat_id=" + nav.id
+        cat.href = "category.html?cat_id=" + nav.id;
     }
 
     document.querySelector(".navm").appendChild(cat);
 }
+
 
 //Artists slider
 const urlParams = new URLSearchParams(window.location.search);

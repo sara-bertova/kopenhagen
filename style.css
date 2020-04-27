@@ -12,6 +12,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     background-color: var(--bg-color);
     font-family: var(--primary-font);
@@ -20,15 +21,15 @@ body {
     /*cursor: none;*/
 }
 
-main{
+main {
     text-align: center;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.cursor{
+.cursor {
     width: 30px;
     height: 30px;
     border: 2px solid var(--text-color);
@@ -40,7 +41,7 @@ ul{
     z-index: 100;
 }
 
-#topBtn{
+#topBtn {
     /*display: none;*/
     background: url(icons/btn-16.png);
 
@@ -57,94 +58,106 @@ ul{
     margin: 30px 0px;
     transition: .5s;
 }
-#topBtn:hover{
+
+#topBtn:hover {
     background: url(icons/btn-17.png);
 }
 
-header{
+header {
     margin-top: 25px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
 }
 
-#logo{
+#logo {
     margin-left: 25px;
 }
-#logo path:nth-child(2){
+
+#logo path:nth-child(2) {
     stroke-dasharray: 275;
     stroke-dashoffset: 275;
     animation: line-anim 2s ease forwards,
         logo-fill 1s ease forwards 2.4s;
 
 }
-#logo path:nth-child(3){
+
+#logo path:nth-child(3) {
     stroke-dasharray: 185;
     stroke-dashoffset: 185;
     animation: line-anim 2s ease forwards .9s,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(4){
+
+#logo path:nth-child(4) {
     stroke-dasharray: 185;
     stroke-dashoffset: 185;
     animation: line-anim 2s ease forwards .6s,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(5){
+
+#logo path:nth-child(5) {
     stroke-dasharray: 237;
     stroke-dashoffset: 237;
     animation: line-anim 2s ease forwards .9s,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(6){
+
+#logo path:nth-child(6) {
     stroke-dasharray: 285;
     stroke-dashoffset: 285;
     animation: line-anim 2s ease forwards .3s,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(7){
+
+#logo path:nth-child(7) {
     stroke-dasharray: 275;
     stroke-dashoffset: 275;
     animation: line-anim 2s ease forwards .6s,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(8){
+
+#logo path:nth-child(8) {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
     animation: line-anim 2s ease forwards,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(9){
+
+#logo path:nth-child(9) {
     stroke-dasharray: 265;
     stroke-dashoffset: 265;
     animation: line-anim 2s ease forwards 1.3s,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(10){
+
+#logo path:nth-child(10) {
     stroke-dasharray: 237;
     stroke-dashoffset: 237;
     animation: line-anim 2s ease forwards,
         logo-fill 1s ease forwards 2.4s;
 }
-#logo path:nth-child(11){
+
+#logo path:nth-child(11) {
     stroke-dasharray: 285;
     stroke-dashoffset: 285;
     animation: line-anim 2s ease forwards 1s,
         logo-fill 1s ease forwards 2.4s;
 }
 
-@keyframes line-anim{
-    to{
+@keyframes line-anim {
+    to {
         stroke-dashoffset: 0;
     }
 }
+
 @keyframes logo-fill {
     from {
         fill: transparent;
     }
 
     to {
-        fill: #000;
+        fill: var(--text-color);
     }
 }
 
@@ -155,11 +168,14 @@ nav a {
     font-size: 25px;
     transition: .5s;
 }
-nav a:hover{
+
+nav a:hover {
     color: var(--red-color);
 }
 
-.yellow-heading, .blue-heading, .red-heading{
+.yellow-heading,
+.blue-heading,
+.red-heading {
     display: flex;
     width: 60%;
     margin-left: auto;
@@ -168,9 +184,11 @@ nav a:hover{
     align-items: center;
     text-align: center;
 }
+
 .yellow-heading {
     color: var(--yellow-color);
 }
+
 .blue-heading {
     color: var(--light-blue);
 }
@@ -192,6 +210,7 @@ h2:after {
     margin: 0 20px 0 0;
     flex: 1 0 20px;
 }
+
 h2:after {
     margin: 0 0 0 20px;
 }
@@ -201,7 +220,7 @@ mark {
     background-color: var(--bg-color);
 }
 
-.sign-up-section{
+.sign-up-section {
     margin: 100px 0;
     width: 100%;
     height: 400px;
@@ -211,7 +230,8 @@ mark {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
-.hole{
+
+.hole {
     width: 350px;
     height: 350px;
     border-radius: 50%;
@@ -224,7 +244,8 @@ mark {
     margin-right: 200px;
 
 }
-.sign-up-section h3{
+
+.sign-up-section h3 {
     font-size: 40px;
     grid-column: 1 / 3;
     grid-row: 1;
@@ -236,7 +257,8 @@ mark {
     align-self: flex-end;
 
 }
-.sign-up-section h4{
+
+.sign-up-section h4 {
     font-size: 30px;
     grid-column: 1 / 3;
     grid-row: 2;
@@ -246,7 +268,8 @@ mark {
     margin-right: auto;
     text-align: end;
 }
-.sign-up-section-submit-email{
+
+.sign-up-section-submit-email {
     grid-column: 1 / 3;
     grid-row: 3;
 
@@ -255,7 +278,7 @@ mark {
     margin-bottom: 100px;
 }
 
-.email-input{
+.email-input {
     width: 200px;
     height: 40px;
 
@@ -265,7 +288,8 @@ mark {
 
     font-family: var(--primary-font);
 }
-.submitBtn{
+
+.submitBtn {
     background: var(--yellow-color);
     color: white;
     font-family: var(--primary-font);
@@ -285,7 +309,7 @@ mark {
     padding: 20px;
 
 }*/
-.ads-img{
+.ads-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -293,21 +317,22 @@ mark {
     margin-bottom: 50px;
 }
 
-.footer-line{
+.footer-line {
     border-top: 1px solid var(--text-color);
     width: 30%;
     margin-left: auto;
     margin-right: auto;
 }
 
-footer{
+footer {
     height: 160px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     color: var(--light-blue);
 
 }
-.contact-icons{
+
+.contact-icons {
     grid-column: 1;
     grid-row: 1 / 4;
     margin-left: auto;
@@ -315,7 +340,8 @@ footer{
     align-self: flex-end;
     margin-bottom: 30px;
 }
-footer h3{
+
+footer h3 {
     font-size: 25px;
     grid-column: 2;
     grid-row: 1;
@@ -323,7 +349,8 @@ footer h3{
     margin-right: 200px;
     margin-bottom: 0;
 }
-footer h4{
+
+footer h4 {
     font-size: 20px;
     grid-column: 2;
     grid-row: 2;
@@ -333,7 +360,8 @@ footer h4{
     margin-bottom: 0;
 
 }
-.footer-submit-email{
+
+.footer-submit-email {
     grid-column: 2;
     grid-row: 3;
     text-align: end;
@@ -342,41 +370,46 @@ footer h4{
 }
 
 @media only screen and (max-width: 800px) {
-    #logo{
+    #logo {
         margin-left: 0;
     }
 
-    nav{
+    nav {
         margin-left: 50px;
     }
-    nav a{
+
+    nav a {
         margin-right: 50px;
     }
 }
+
 @media only screen and (max-width: 600px) {
-    nav{
+    nav {
         margin-left: 0px;
     }
 
-    .sign-up-section{
+    .sign-up-section {
         grid-template-columns: 1fr;
         align-items: center;
     }
-    .hole{
+
+    .hole {
         width: 250px;
         height: 250px;
         grid-column: 1;
         margin-right: 0px;
 
     }
-    .sign-up-section h3{
+
+    .sign-up-section h3 {
         font-size: 35px;
         grid-column: 1;
         grid-row: 1;
         text-align: center;
 
     }
-    .sign-up-section h4{
+
+    .sign-up-section h4 {
         font-size: 20px;
         grid-column: 1;
         grid-row: 2;
@@ -384,28 +417,32 @@ footer h4{
         margin-bottom: 0;
     }
 
-    footer{
+    footer {
         grid-template-columns: 1fr;
     }
-    .contact-icons{
+
+    .contact-icons {
         grid-column: 1;
         grid-row: 4;
         margin-bottom: 0;
         margin-top: 10px;
     }
-    footer h3{
+
+    footer h3 {
         margin-right: auto;
         margin-left: auto;
         grid-row: 1;
         grid-column: 1;
     }
-    footer h4{
+
+    footer h4 {
         margin-right: auto;
         margin-left: auto;
         grid-row: 2;
         grid-column: 1;
     }
-    .footer-submit-email{
+
+    .footer-submit-email {
         margin-right: auto;
         margin-left: auto;
         grid-row: 3;

@@ -46,6 +46,40 @@
 
     </header>
 
+
+    <!--AUTOMATIC SLIDESHOW-->
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="images/ads.PNG" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="images/ads.PNG" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="images/ads.PNG" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+
+
     <h2 class="yellow-heading">ARTISTS</h2>
     <section class="artists slider">
     </section>
@@ -67,19 +101,19 @@
     <div class="footer-line"></div>
     <footer>
 
-    <div class="contact-icons">
-       <img src="icons/email-01.png">
-       <img src="icons/fb-01.png">
-       <img src="icons/ig-01.png">
-       <img src="icons/twitter-01.png">
-    </div>
+        <div class="contact-icons">
+            <img src="icons/email-01.png">
+            <img src="icons/fb-01.png">
+            <img src="icons/ig-01.png">
+            <img src="icons/twitter-01.png">
+        </div>
 
         <h3>DON'T WANT TO MISS ANYTHING?</h3>
         <h4>Sign up for our newsletter today.</h4>
 
         <div class="footer-submit-email">
-            <input name="myvalue" class="email-input"  type="text" placeholder="your email adress">
-            <input type="submit" class="submitBtn"  value="SIGN UP">
+            <input name="myvalue" class="email-input" type="text" placeholder="your email adress">
+            <input type="submit" class="submitBtn" value="SIGN UP">
         </div>
 
     </footer>
@@ -105,29 +139,29 @@
     <script type="text/javascript">
         $(document).on('ready', function() {
             $('.artists').slick({
-                    dots: true,
-                    infinite: true,
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    responsive: [{
-                            breakpoint: 1000,
-                            settings: {
-                                slidesToShow: 2,
-                                slidesToScroll: 2,
-                                dots: true,
-                                infinite: true
-                            }
-                        },
-                        {
-                            breakpoint: 600,
-                            settings: {
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                dots: false,
-                                infinite: true
-                            }
+                dots: true,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [{
+                        breakpoint: 1000,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: true,
+                            infinite: true
                         }
-                    ]
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false,
+                            infinite: true
+                        }
+                    }
+                ]
             });
         });
     </script>

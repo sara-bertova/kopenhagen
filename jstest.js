@@ -1,6 +1,7 @@
 //JS FOR TRYING OUT STUFF
 
-fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=13&orderby=id")
+
+/*fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=13&orderby=id")
     .then(function (response) {
         return response.json()
     })
@@ -54,6 +55,6 @@ function createMonths(oneMon) {
         h2.classList.add("blue-heading");
         document.querySelector("#calendar").appendChild(h2);
 
-    }
+    }*/
 
 

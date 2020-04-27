@@ -42,14 +42,15 @@ fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&
 function handleCat(jsonData) {
     jsonData.forEach(createMonths)
 }
-function createMonths(oneMon) {
-        console.log(oneMon)
 
-        const h2 = document.createElement("h2");
-        h2.textContent = oneMon.name;
-        h2.classList.add("blue-heading");
-        document.querySelector("#calendar").appendChild(h2);
-    }
+function createMonths(oneMon) {
+    console.log(oneMon)
+
+    const h2 = document.createElement("h2");
+    h2.textContent = oneMon.name;
+    h2.classList.add("blue-heading");
+    document.querySelector("#calendar").appendChild(h2);
+}
 
 
 

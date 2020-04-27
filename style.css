@@ -151,7 +151,7 @@ nav a:hover{
     color: var(--red-color);
 }
 
-.yellow-heading {
+.yellow-heading, .blue-heading{
     display: flex;
     width: 60%;
     margin-left: auto;
@@ -159,7 +159,12 @@ nav a:hover{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.yellow-heading {
     color: var(--yellow-color);
+}
+.blue-heading {
+    color: var(--light-blue);
 }
 h2:before,
 h2:after {

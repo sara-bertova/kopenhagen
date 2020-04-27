@@ -34,7 +34,6 @@ fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
 function handleArtistsData(jsonData) {
     jsonData.reverse();
     jsonData.forEach(showArt)
-
 }
 
 function showArt(art) {

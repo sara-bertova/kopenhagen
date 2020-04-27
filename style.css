@@ -294,7 +294,7 @@ mark {
 }
 
 .footer-line{
-    border-top:2px solid var(--text-color);
+    border-top: 1px solid var(--text-color);
     width: 30%;
     margin-left: auto;
     margin-right: auto;

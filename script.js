@@ -18,13 +18,12 @@ function showNav(nav) {
     const cat = document.createElement("a");
     cat.textContent = nav.name;
 
-    if(nav.name == "Contact"){
-        cat.href="contact.html"
-    }
-    else{
-       cat.href = "category.html?cat_id=" + nav.id
-    }
 
+    if (nav.name == "Contact") {
+        cat.href = "contact.html"
+    } else {
+        cat.href = "category.html?cat_id=" + nav.id
+    }
 
     document.querySelector(".navm").appendChild(cat);
 }
@@ -33,22 +32,22 @@ function showNav(nav) {
 const urlParams = new URLSearchParams(window.location.search);
 const the_artist_id = urlParams.get("artist_id");
 
-if(the_artist_id){
+if (the_artist_id) {
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist/" + the_artist_id + "?_embed")
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        showSingleArt(data)
-    })
-}else{
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            showSingleArt(data)
+        })
+} else {
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        handleArtistsData(data)
-    })
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            handleArtistsData(data)
+        })
 }
 
 
@@ -74,9 +73,9 @@ function showArt(art) {
     }
 }
 
-function showSingleArt(art){
+function showSingleArt(art) {
 
-    if (document.querySelector("#single-artist-template")){
+    if (document.querySelector("#single-artist-template")) {
         const single_artist_template = document.querySelector("#single-artist-template").content;
         var copy = single_artist_template.cloneNode(true);
 
@@ -84,7 +83,7 @@ function showSingleArt(art){
 
         document.querySelector(".single-artist").appendChild(copy);
 
-        }
+    }
 }
 
 /*-------GO TO TOP BTN------------------------------*/

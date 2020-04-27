@@ -47,11 +47,12 @@ body {
     padding-bottom: 5px;
 }
 .read-more-btn{
-    background: none;
-    border: none;
-    outline: none;
+    text-decoration: none;
+    color: var(--text-color);
     cursor: pointer;
-
+}
+.read-more-btn:hover{
+    text-decoration: underline;
 }
 
 .slick-slide {

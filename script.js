@@ -42,6 +42,11 @@ function showArt(art) {
 
     var copy = template.cloneNode(true);
 
+    const artis_link = copy.querySelector(".read-more-btn");
+    if (artis_link) {
+        artis_link.href += art.id;
+    }
+
     copy.querySelector(".artist-name").textContent = art.title.rendered;
     $('.artists').slick('slickAdd', copy);
 }

@@ -38,7 +38,7 @@ function handleArtistsData(jsonData) {
 
 function showArt(art) {
 
-    const template = document.querySelector("template").content;
+    const template = document.querySelector("#slider-template").content;
 
     var copy = template.cloneNode(true);
 

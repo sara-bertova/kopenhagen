@@ -28,8 +28,12 @@ const the_artist_id = urlParams.get("artist_id");
 
 if(the_artist_id){
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist/" + the_artist_id + "?_embed")
-    .then(res => res.json)
-    .then(showSingleArt)
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        showSingleArt(data)
+    })
 }else{
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
     .then(function (response) {
@@ -69,7 +73,7 @@ function showSingleArt(art){
         const single_artist_template = document.querySelector("#single-artist-template").content;
         var copy = single_artist_template.cloneNode(true);
 
-        copy.querySelector("#artist-name").textContent = art.id;
+        copy.querySelector("#artist-name").textContent = art.title.rendered;
 
         document.querySelector(".single-artist").appendChild(copy);
 

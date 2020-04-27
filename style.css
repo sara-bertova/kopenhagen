@@ -20,6 +20,14 @@ body {
     /*cursor: none;*/
 }
 
+main{
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
 .cursor{
     width: 30px;
     height: 30px;
@@ -151,7 +159,7 @@ nav a:hover{
     color: var(--red-color);
 }
 
-.yellow-heading, .blue-heading{
+.yellow-heading, .blue-heading, .red-heading{
     display: flex;
     width: 60%;
     margin-left: auto;
@@ -166,6 +174,17 @@ nav a:hover{
 .blue-heading {
     color: var(--light-blue);
 }
+
+.red-heading {
+    color: var(--red-color);
+}
+
+h1 {
+    color: var(--yellow-color);
+    text-align: right;
+    margin-right: 30px;
+}
+
 h2:before,
 h2:after {
     content: '';
@@ -175,6 +194,11 @@ h2:after {
 }
 h2:after {
     margin: 0 0 0 20px;
+}
+
+mark {
+    font-weight: bold;
+    background-color: var(--bg-color);
 }
 
 .sign-up-section{

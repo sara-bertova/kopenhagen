@@ -17,7 +17,14 @@ function showNav(nav) {
 
     const cat = document.createElement("a");
     cat.textContent = nav.name;
-    cat.href = "category.html?cat_id=" + nav.id
+
+    if(nav.name == "Contact"){
+        cat.href="contact.html"
+    }
+    else{
+       cat.href = "category.html?cat_id=" + nav.id
+    }
+
 
     document.querySelector(".navm").appendChild(cat);
 }

@@ -23,13 +23,23 @@ function showNav(nav) {
 }
 
 //Artists slider
-fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
+const urlParams = new URLSearchParams(window.location.search);
+const the_artist_id = urlParams.get("artist_id");
+
+if(the_artist_id){
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist/" + the_artist_id + "?_embed")
+    .then(res => res.json)
+    .then(showSingleArt)
+}else{
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
     .then(function (response) {
         return response.json()
     })
     .then(function (data) {
         handleArtistsData(data)
     })
+}
+
 
 function handleArtistsData(jsonData) {
     jsonData.reverse();
@@ -38,17 +48,32 @@ function handleArtistsData(jsonData) {
 
 function showArt(art) {
 
-    const template = document.querySelector("#slider-template").content;
+    if (document.querySelector("#slider-template")) {
+        const slider_template = document.querySelector("#slider-template").content;
 
-    var copy = template.cloneNode(true);
+        var copy = slider_template.cloneNode(true);
 
-    const artis_link = copy.querySelector(".read-more-btn");
-    if (artis_link) {
-        artis_link.href += art.id;
+        const artis_link = copy.querySelector(".read-more-btn");
+        if (artis_link) {
+            artis_link.href += art.id;
+        }
+
+        copy.querySelector(".artist-name").textContent = art.title.rendered;
+        $('.artists').slick('slickAdd', copy);
     }
+}
 
-    copy.querySelector(".artist-name").textContent = art.title.rendered;
-    $('.artists').slick('slickAdd', copy);
+function showSingleArt(art){
+
+    if (document.querySelector("#single-artist-template")){
+        const single_artist_template = document.querySelector("#single-artist-template").content;
+        var copy = single_artist_template.cloneNode(true);
+
+        copy.querySelector("#artist-name").textContent = art.id;
+
+        document.querySelector(".single-artist").appendChild(copy);
+
+        }
 }
 
 /*-------GO TO TOP BTN------------------------------*/

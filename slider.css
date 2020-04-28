@@ -18,15 +18,13 @@ body {
 }
 
 .slider {
-    width: 70%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 }
 .artist-item{
     background: white;
     height: 250px;
-
-
 }
 .artist-item-top{
     height: 150px;
@@ -54,9 +52,10 @@ body {
 }
 .artist-name{
     border-bottom: 2px solid var(--text-color);
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 5px;
+    width: 150px
 }
 .read-more-btn{
     text-decoration: none;

@@ -187,12 +187,35 @@ img {
     font-weight: bold;
     padding: 8px 12px;
     position: absolute;
-    bottom: 100px;
+    bottom: 200px;
     left: 100px;
     width: 100%;
     text-align: left;
 }
 
+.eventArtist {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 150px;
+    left: 100px;
+    width: 100%;
+    text-align: left;
+}
+
+.eventDate {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    width: 100%;
+    text-align: left;
+}
 /* Number text (1/3 etc) */
 .numbertext {
     color: var(--text-color);

@@ -31,7 +31,7 @@ function showNav(nav) {
 }
 
 //AUTOMATIC SLIDESHOW - make it dynamic
-fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?per_page=3&orderby=date")
+fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?per_page=4&orderby=date")
     .then(function (response) {
         return response.json()
     })
@@ -54,8 +54,16 @@ function createEvents(oneEvent) {
     const text = document.createElement("div");
     text.classList.add("text");
     text.textContent = oneEvent.title.rendered;
+    const artist = document.createElement("div");
+    artist.classList.add("eventArtist");
+    artist.textContent = oneEvent.artist;
+    const date = document.createElement("div");
+    date.classList.add("eventDate");
+    date.textContent = oneEvent.date_of_event;
     div.appendChild(img);
     div.appendChild(text);
+    div.appendChild(artist);
+    div.appendChild(date);
     document.querySelector(".slideshow-container").appendChild(div);
     var slideIndex = 0;
     showSlides();

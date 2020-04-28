@@ -97,6 +97,7 @@ function showArt(art) {
         }
 
         copy.querySelector(".artist-name").textContent = art.title.rendered;
+        copy.querySelector(".artimg").src = art.image_of_artist.guid;
         $('.artists').slick('slickAdd', copy);
     }
 }

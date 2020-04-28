@@ -109,6 +109,7 @@ function showSingleArt(art) {
 
         copy.querySelector("#artist-name").textContent = art.title.rendered;
         copy.querySelector(".single-artist-event-date").textContent = art.date_of_event;
+        copy.querySelector(".single-artist-event").textContent = art.name_of_event;
 
         document.querySelector(".single-artist").appendChild(copy);
 

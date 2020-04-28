@@ -30,28 +30,79 @@ function showNav(nav) {
     document.querySelector(".navm").appendChild(cat);
 }
 
-//DYNAMIC MONTHS IN CALENDAR
-if(document.querySelector("#calendar")){
-    fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
+//AUTOMATIC SLIDESHOW - make it dynamic
+fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?per_page=3&orderby=date")
     .then(function (response) {
         return response.json()
     })
     .then(function (data) {
-        handleCat(data)
+        handleSlide(data)
     })
 
-function handleCat(jsonData) {
-    jsonData.forEach(createMonths)
+function handleSlide(jsonData) {
+    jsonData.forEach(createEvents)
 }
 
-function createMonths(oneMon) {
-    console.log(oneMon)
+function createEvents(oneEvent) {
+    console.log(oneEvent)
+    const div = document.createElement("div");
+    div.classList.add("mySlides");
+    div.classList.add("fade");
+    const img = document.createElement("img");
+    img.src = oneEvent.image.guid;
+    img.style.width = "100%";
+    const text = document.createElement("div");
+    text.classList.add("text");
+    text.textContent = oneEvent.title.rendered;
+    div.appendChild(img);
+    div.appendChild(text);
+    document.querySelector(".slideshow-container").appendChild(div);
+    var slideIndex = 0;
+    showSlides();
 
-    const h2 = document.createElement("h2");
-    h2.textContent = oneMon.name;
-    h2.classList.add("blue-heading");
-    document.querySelector("#calendar").appendChild(h2);
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
 }
+
+
+//DYNAMIC MONTHS IN CALENDAR
+if (document.querySelector("#calendar")) {
+    fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            handleCat(data)
+        })
+
+    function handleCat(jsonData) {
+        jsonData.forEach(createMonths)
+    }
+
+    function createMonths(oneMon) {
+        console.log(oneMon)
+
+        const h2 = document.createElement("h2");
+        h2.textContent = oneMon.name;
+        h2.classList.add("blue-heading");
+        document.querySelector("#calendar").appendChild(h2);
+    }
 
 }
 
@@ -144,7 +195,7 @@ function topFunction() { // eslint-disable-line no-unused-vars
 
 
 //AUTOMATIC SLIDESHOW - for upcoming events
-var slideIndex = 0;
+/*var slideIndex = 0;
 showSlides();
 
 function showSlides() {
@@ -164,7 +215,7 @@ function showSlides() {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
     setTimeout(showSlides, 5000); // Change image every 5 seconds
-}
+}*/
 
 /*
 

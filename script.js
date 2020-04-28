@@ -31,7 +31,8 @@ function showNav(nav) {
 }
 
 //DYNAMIC MONTHS IN CALENDAR
-fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
+if(document.querySelector("#calendar")){
+    fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
     .then(function (response) {
         return response.json()
     })
@@ -52,8 +53,7 @@ function createMonths(oneMon) {
     document.querySelector("#calendar").appendChild(h2);
 }
 
-
-
+}
 
 
 //Artists slider
@@ -108,6 +108,7 @@ function showSingleArt(art) {
         var copy = single_artist_template.cloneNode(true);
 
         copy.querySelector("#artist-name").textContent = art.title.rendered;
+        copy.querySelector(".single-artist-event-date").textContent = art.date_of_event;
 
         document.querySelector(".single-artist").appendChild(copy);
 

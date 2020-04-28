@@ -30,6 +30,18 @@ body {
 }
 .artist-item-top{
     height: 150px;
+    padding-top: 25px;
+}
+.artist-img-holder{
+    width: 150px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.artist-img{
+    border-radius: 50%;
+
 }
 .artist-item-bottom{
     width: auto;

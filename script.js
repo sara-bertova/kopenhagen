@@ -89,7 +89,7 @@ function createEvents(oneEvent) {
 }
 
 
-//DYNAMIC MONTHS IN CALENDAR
+/*//DYNAMIC MONTHS IN CALENDAR
 if (document.querySelector("#calendar")) {
     fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
         .then(function (response) {
@@ -115,6 +115,37 @@ if (document.querySelector("#calendar")) {
         document.querySelector("#calendar").appendChild(filter);
     }
 
+}*/
+
+//ADD EVENTS TO CALENDAR
+fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            showData(data)
+        })
+
+
+function showData(jsonData) {
+    jsonData.forEach(showEvent)
+}
+
+
+function showEvent(event) {
+    console.log(event)
+    const template = document.querySelector("#AllEvents").content;
+    const clone = template.cloneNode(true);
+
+    clone.querySelector(".eventImage").src = event.image.guid;
+    clone.querySelector("h3").textContent = event.title.rendered;
+    clone.querySelector(".location").textContent = `${event.gallery}` + ", " + `${event.address}`;
+    clone.querySelector(".date").textContent = event.date_of_event;
+    clone.querySelector(".artistev").textContent = event.artist;
+    clone.querySelector(".type").textContent = event.type_of_event;
+    clone.querySelector(".excerpt").innerHTML = event.excerpt.rendered;
+
+    document.querySelector("#calendar").appendChild(clone);
 }
 
 

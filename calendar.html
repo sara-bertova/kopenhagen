@@ -43,8 +43,19 @@
     </header>
 
     <main id="calendar"></main>
-    <section class="artists slider">
-    </section>
+    <template id="AllEvents">
+        <article class="oneEvent">
+            <img class="eventImage" src="">
+            <h3>NAME</h3>
+            <p class="location"></p>
+            <p class="date"></p>
+            <p class="artistev"></p>
+            <p class="type"></p>
+            <p class="excerpt"></p>
+            <button>READ MORE</button>
+        </article>
+    </template>
+
 
     <img src="images/ads.PNG" class="ads-img">
 
@@ -68,53 +79,7 @@
 
     </footer>
 
-    <template id="slider-template">
-        <div>
-            <div>
-                <div class="artist-item">
-                    <div class="artist-item-top">Image</div>
-                    <div class="artist-item-bottom">
-                        <p class="artist-name">your content1</p>
-                        <a href="singleartist.html?artist_id=" class="read-more-btn">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
 
     <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
-
-    <script type="text/javascript">
-        $(document).on('ready', function() {
-            $('.artists').slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                responsive: [{
-                        breakpoint: 1000,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                            dots: true,
-                            infinite: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: false,
-                            infinite: true
-                        }
-                    }
-                ]
-            });
-        });
-    </script>
-
 
 </body></html>

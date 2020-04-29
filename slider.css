@@ -24,12 +24,22 @@ body {
 }
 .artist-item{
     background: white;
-    height: 250px;
-
-
+    height: 350px;
 }
 .artist-item-top{
-    height: 150px;
+    height: 250px;
+    padding-top: 15%;
+}
+.artist-img-holder{
+    width: 200px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.artist-img{
+    border-radius: 50%;
+
 }
 .artist-item-bottom{
     width: auto;
@@ -42,23 +52,28 @@ body {
 }
 .artist-name{
     border-bottom: 2px solid var(--text-color);
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 5px;
+    width: 70%
 }
 .read-more-btn{
-    background: none;
-    border: none;
-    outline: none;
+    text-decoration: none;
+    color: var(--text-color);
     cursor: pointer;
-
+}
+.read-more-btn:hover{
+    text-decoration: underline;
 }
 
 .slick-slide {
     margin: 0px 20px;
 }
 .slick-slide img {
-    width: 100%;
+    width: 75%;
+    margin-left: auto;
+    margin-right:auto;
+    border-radius: 50%;
 }
 .slick-prev:before,
 .slick-next:before {

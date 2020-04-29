@@ -447,12 +447,72 @@ footer h4 {
     margin-top: 10px;
 }
 
+/*SINGLE ARTIST PAGE*/
+.artist-info-wrapper{
+    text-align: center;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .single-artist-event-info{
     color: var(--yellow-color);
     font-weight: bold;
     font-size: 20px;
     margin: 0;
+
     text-align: end;
+}
+
+.short-description-holder{
+    display: none;
+    text-align: center;
+    align-items: center;
+}
+.short-description{
+    font-size: 20px;
+    line-height: 25px;
+    background: white;
+    text-align: justify;
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.singleartist-readmore-btn{
+    display: none;
+    border: none;
+    outline: none;
+    background: var(--yellow-color);
+    color: white;
+    letter-spacing: 2px;
+    width: 170px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: .5s;
+}
+.singleartist-readmore-btn:hover{
+    border: 2px solid var(--yellow-color);
+    background: transparent;
+    color: var(--yellow-color);
+}
+
+.readmore-content{
+    display: none;
+}
+
+.about-artist-holder{
+    display: none;
+}
+.about-event-holder{
+    display: none;
+}
+.art-images{
+    display: none;
 }
 
 @media only screen and (max-width: 800px) {

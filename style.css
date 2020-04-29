@@ -269,6 +269,7 @@ img {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 28px;
 }
 
 .yellow-heading {
@@ -393,10 +394,8 @@ mark {
 }*/
 .ads-img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     width: 50%;
-    margin-bottom: 50px;
+    margin: 50px auto;
 }
 
 .footer-line {
@@ -508,12 +507,32 @@ footer h4 {
 .about-artist-holder{
     display: none;
 }
+.about-artist, .about-event{
+    font-size: 20px;
+    line-height: 25px;
+    text-align: justify;
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .about-event-holder{
     display: none;
 }
+.about-event{
+    margin-top: 0;
+    padding-top: 0;
+}
+.single-art-about-heading{
+    color: var(--yellow-color);
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
 .art-images{
     display: none;
 }
+
 
 @media only screen and (max-width: 800px) {
     #logo {

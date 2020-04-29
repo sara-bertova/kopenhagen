@@ -177,7 +177,16 @@ function showSingleArt(art) {
         }
 
         if (art.about_artist) {
-            copy.querySelector(".singleartist-readmore-btn").style.display = "inline";
+            var readmore_btn = copy.querySelector(".singleartist-readmore-btn");
+            var long_description = copy.querySelector(".readmore-content")
+            readmore_btn.style.display = "inline";
+            readmore_btn.addEventListener("click", () => {
+                readmore_btn.style.display = "none";
+                long_description.style.display = "inline";
+
+
+            })
+
             copy.querySelector(".about-artist-holder").style.display = "inline";
             copy.querySelector(".about-artist").textContent = art.about_artist;
 
@@ -196,6 +205,7 @@ function showSingleArt(art) {
                 copy.querySelector(".art-images").append(art_img);
             }
         }
+
 
         document.querySelector(".single-artist").appendChild(copy);
 

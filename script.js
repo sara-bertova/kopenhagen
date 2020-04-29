@@ -89,7 +89,7 @@ function createEvents(oneEvent) {
 }
 
 
-//DYNAMIC MONTHS IN CALENDAR
+/*//DYNAMIC MONTHS IN CALENDAR
 if (document.querySelector("#calendar")) {
     fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
         .then(function (response) {
@@ -109,14 +109,123 @@ if (document.querySelector("#calendar")) {
         const h2 = document.createElement("h2");
         h2.textContent = oneMon.name;
         h2.classList.add("blue-heading");
+        const filter = document.createElement("img");
+        filter.src = "icons/filter-small.png";
         document.querySelector("#calendar").appendChild(h2);
+        document.querySelector("#calendar").appendChild(filter);
     }
 
+}*/
+
+//ADD EVENTS TO CALENDAR
+const urlParams = new URLSearchParams(window.location.search);
+const the_event_id = urlParams.get("event_id");
+
+if (the_event_id) {
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/event/" + the_event_id + "?_embed")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            showSingleEvent(data)
+        })
+} else {
+    fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            showData(data)
+        })
+}
+
+
+
+
+function showData(jsonData) {
+    jsonData.forEach(showEvent)
+}
+
+
+function showEvent(event) {
+    console.log(event)
+    const template = document.querySelector("#AllEvents").content;
+    const clone = template.cloneNode(true);
+
+    /*clone.querySelector(".eventImage").src = event.image.guid;*/
+    clone.querySelector("h3").textContent = event.title.rendered;
+    clone.querySelector(".location").textContent = `${event.gallery}` + ", " + `${event.address}`;
+    clone.querySelector(".date").textContent = event.date_of_event;
+    clone.querySelector(".artistev").textContent = event.artist;
+    clone.querySelector(".type").textContent = event.type_of_event;
+    clone.querySelector(".excerpt").innerHTML = event.excerpt.rendered;
+    const event_link = clone.querySelector(".read-more-btn-events");
+    if (event_link) {
+        event_link.href += event.id;
+    }
+    document.querySelector("#calendar").appendChild(clone);
+}
+
+
+
+function showSingleEvent(ev) {
+
+    if (document.querySelector("#single-event")) {
+        const single_event_template = document.querySelector("#single-event").content;
+        var copy = single_event_template.cloneNode(true);
+
+        copy.querySelector("h2").textContent = `${ev.artist}` + " - " + `${ev.title.rendered}`;
+        copy.querySelector(".date span").textContent = ev.date;
+        copy.querySelector(".longDes").textContent = ev.long_description;
+        copy.querySelector(".quote").textContent = ev.quote;
+        copy.querySelector(".oh span").textContent = ev.opening_hours;
+        copy.querySelector(".e-mail span").textContent = ev.email;
+        copy.querySelector(".phone span").textContent = ev.phone;
+        copy.querySelector(".web").textContent = ev.web;
+        copy.querySelector(".web").href = ev.web;
+        copy.querySelector(".evimg").src = ev.image.guid;
+        copy.querySelector(".gallogo").src = ev.logo.guid;
+        copy.querySelector(".location span").textContent = `${ev.gallery}` + ", " + `${ev.address}`;
+
+
+        if (ev.price) {
+            copy.querySelector(".price span").textContent = ev.price;
+        } else {
+            copy.querySelector(".price").style.display = "none";
+        }
+
+        if (ev.facebook) {
+            copy.querySelector(".fb").href = ev.facebook;
+        } else {
+            copy.querySelector(".fb").style.display = "none";
+        }
+
+        if (ev.twitter) {
+            copy.querySelector(".tw").href = ev.twitter;
+        } else {
+            copy.querySelector(".tw").style.display = "none";
+        }
+
+        if (ev.instagram) {
+            copy.querySelector(".ig").href = ev.price;
+        } else {
+            copy.querySelector(".ig").style.display = "none";
+        }
+
+        if (ev.linkedin) {
+            copy.querySelector(".in").href = ev.linkedin;
+        } else {
+            copy.querySelector(".in").style.display = "none";
+        }
+
+        document.querySelector("#event").appendChild(copy);
+
+    }
 }
 
 
 //Artists slider
-const urlParams = new URLSearchParams(window.location.search);
+/*const urlParams = new URLSearchParams(window.location.search);*/
 const the_artist_id = urlParams.get("artist_id");
 
 if (the_artist_id) {
@@ -311,28 +420,7 @@ function topFunction() { // eslint-disable-line no-unused-vars
 }
 
 
-//AUTOMATIC SLIDESHOW - for upcoming events
-/*var slideIndex = 0;
-showSlides();
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
-}*/
 
 /*
 

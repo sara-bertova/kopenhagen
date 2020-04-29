@@ -118,6 +118,7 @@ if (document.querySelector("#calendar")) {
 }*/
 
 //ADD EVENTS TO CALENDAR
+<<<<<<< HEAD
 const urlParams = new URLSearchParams(window.location.search);
 const the_event_id = urlParams.get("event_id");
 
@@ -165,6 +166,8 @@ function showEvent(event) {
     }
     document.querySelector("#calendar").appendChild(clone);
 }
+}
+
 
 function showSingleEvent(ev) {
 

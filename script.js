@@ -109,7 +109,10 @@ if (document.querySelector("#calendar")) {
         const h2 = document.createElement("h2");
         h2.textContent = oneMon.name;
         h2.classList.add("blue-heading");
+        const filter = document.createElement("img");
+        filter.src = "icons/filter-small.png";
         document.querySelector("#calendar").appendChild(h2);
+        document.querySelector("#calendar").appendChild(filter);
     }
 
 }

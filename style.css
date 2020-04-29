@@ -273,6 +273,7 @@ img {
 
 .yellow-heading {
     color: var(--yellow-color);
+    margin-top: 70px;
 }
 .blue-heading {
     color: var(--light-blue);

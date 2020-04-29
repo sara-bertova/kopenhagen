@@ -18,21 +18,21 @@ body {
 }
 
 .slider {
-    width: 50%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 .artist-item{
     background: white;
-    height: 250px;
+    height: 350px;
 }
 .artist-item-top{
-    height: 150px;
-    padding-top: 25px;
+    height: 250px;
+    padding-top: 15%;
 }
 .artist-img-holder{
-    width: 150px;
-    height: 70px;
+    width: 200px;
+    height: 30px;
     margin-left: auto;
     margin-right: auto;
 

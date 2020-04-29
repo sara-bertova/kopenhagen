@@ -57,4 +57,35 @@ function createMonths(oneMon) {
 
     }*/
 
+if (document.querySelector("#gallery")) {
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            handleGalleryData(data)
+        })
 
+    function handleGalleryData(jsonData) {
+        jsonData.reverse();
+        jsonData.forEach(showGal)
+    }
+
+    function showGal(galData) {
+        const gal_template = document.querySelector("#gallery-template").content;
+        var copy = gal_template.cloneNode(true);
+
+        copy.querySelector("#date").textContent = galData.date_of_event;
+
+       /* const cat = document.createElement("a");
+    cat.textContent = nav.name;*/
+
+        for (i = 0; i < galData.images.length; i++) {
+            const gal_img = document.createElement("img");
+            gal_img.src = galData.images[i].guid;
+            copy.querySelector(".gallery-images").append(gal_img);
+        }
+
+        document.querySelector(".event-date").appendChild(copy);
+    }
+}

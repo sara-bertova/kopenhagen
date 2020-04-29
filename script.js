@@ -118,7 +118,8 @@ if (document.querySelector("#calendar")) {
 }*/
 
 //ADD EVENTS TO CALENDAR
-fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event")
+if(document.querySelector("#AllEvents")){
+    fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event")
         .then(function (response) {
             return response.json()
         })
@@ -147,6 +148,8 @@ function showEvent(event) {
 
     document.querySelector("#calendar").appendChild(clone);
 }
+}
+
 
 
 //Artists slider

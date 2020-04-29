@@ -118,7 +118,6 @@ if (document.querySelector("#calendar")) {
 }*/
 
 //ADD EVENTS TO CALENDAR
-<<<<<<< HEAD
 const urlParams = new URLSearchParams(window.location.search);
 const the_event_id = urlParams.get("event_id");
 
@@ -166,7 +165,7 @@ function showEvent(event) {
     }
     document.querySelector("#calendar").appendChild(clone);
 }
-}
+
 
 
 function showSingleEvent(ev) {
@@ -189,38 +188,33 @@ function showSingleEvent(ev) {
         copy.querySelector(".location span").textContent = `${ev.gallery}` + ", " + `${ev.address}`;
 
 
-        if (ev.price){
+        if (ev.price) {
             copy.querySelector(".price span").textContent = ev.price;
-        }
-        else{
+        } else {
             copy.querySelector(".price").style.display = "none";
         }
 
-        if (ev.facebook){
+        if (ev.facebook) {
             copy.querySelector(".fb").href = ev.facebook;
-        }
-        else{
+        } else {
             copy.querySelector(".fb").style.display = "none";
         }
 
-        if (ev.twitter){
+        if (ev.twitter) {
             copy.querySelector(".tw").href = ev.twitter;
-        }
-        else{
+        } else {
             copy.querySelector(".tw").style.display = "none";
         }
 
-        if (ev.instagram){
+        if (ev.instagram) {
             copy.querySelector(".ig").href = ev.price;
-        }
-        else{
+        } else {
             copy.querySelector(".ig").style.display = "none";
         }
 
-        if (ev.linkedin){
+        if (ev.linkedin) {
             copy.querySelector(".in").href = ev.linkedin;
-        }
-        else{
+        } else {
             copy.querySelector(".in").style.display = "none";
         }
 

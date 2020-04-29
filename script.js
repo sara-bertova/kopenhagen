@@ -46,6 +46,38 @@ function showArt(art) {
     $('.artists').slick('slickAdd', copy);
 }
 
+//Gallery
+if (document.querySelector("#gallery")){
+fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        handleGalleryData(data)
+    })
+
+function handleGalleryData(jsonData) {
+    jsonData.reverse();
+    console.log(jsonData);
+    jsonData.forEach(showDate);
+}
+
+function showDate(gallery) {
+
+    const gal_template = document.querySelector("#gallery-template").content;
+
+    var copy = gal_template.cloneNode(true);
+
+    copy.querySelector("#date").textContent = gallery.date_of_event;
+    copy.querySelector("#name").textContent = gallery.title.rendered;
+
+    for (i = 0; i < gallery.images.length; i++){
+        copy.querySelector("#imageName").src = gallery.images[i].guid;
+    }
+    document.querySelector(".event-date").appendChild(copy);
+}
+}
+
 /*-------GO TO TOP BTN------------------------------*/
 
 //enable/disable scroll button based on scroller position

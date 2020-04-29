@@ -171,6 +171,26 @@ function showSingleArt(art) {
         copy.querySelector(".single-artist-event-date").textContent = art.date_of_event;
         copy.querySelector(".single-artist-event").textContent = art.name_of_event;
 
+        if (art.short_description) {
+            copy.querySelector(".short-description").textContent = art.short_description;
+        }
+
+        if (art.about_artist) {
+            copy.querySelector(".about-artist").textContent = art.about_artist;
+        }
+
+        if (art.about_event) {
+            copy.querySelector(".about-event").textContent = art.about_event;
+        }
+
+        if (art.images_of_work) {
+            for (i = 0; i < art.images_of_work.length; i++) {
+                const art_img = document.createElement("img");
+                art_img.src = art.images_of_work[i].guid;
+                copy.querySelector(".art-images").append(art_img);
+            }
+        }
+
         document.querySelector(".single-artist").appendChild(copy);
 
     }

@@ -43,6 +43,38 @@ if (document.querySelector(".slideshow-container")) {
         jsonData.forEach(createEvents)
     }
 
+function createEvents(oneEvent) {
+
+    const div = document.createElement("div");
+    div.classList.add("mySlides");
+    div.classList.add("fade");
+    const img = document.createElement("img");
+    img.src = oneEvent.image.guid;
+    img.style.width = "100%";
+    const text = document.createElement("div");
+    text.classList.add("text");
+    text.textContent = oneEvent.title.rendered;
+    const artist = document.createElement("div");
+    artist.classList.add("eventArtist");
+    artist.textContent = oneEvent.artist;
+    const date = document.createElement("div");
+    date.classList.add("eventDate");
+    date.textContent = oneEvent.date_of_event;
+    div.appendChild(img);
+    div.appendChild(text);
+    div.appendChild(artist);
+    div.appendChild(date);
+    document.querySelector(".slideshow-container").appendChild(div);
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+
     function createEvents(oneEvent) {
         console.log(oneEvent)
         const div = document.createElement("div");
@@ -408,6 +440,79 @@ function showSingleArt(art) {
     }
 }
 
+//Gallery
+if (document.querySelector("#gallery")) {
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            handleGalleryData(data)
+        })
+
+    function handleGalleryData(jsonData) {
+        jsonData.reverse();
+        console.log(jsonData);
+        jsonData.forEach(showDate);
+    }
+
+    function showDate(gallery) {
+
+        const gal_template = document.querySelector("#gallery-template").content;
+
+        var copy = gal_template.cloneNode(true);
+
+         const gallery_link = copy.querySelector(".gallery-link");
+        if (gallery_link) {
+            gallery_link.href += gallery.id;
+        }
+
+        copy.querySelector("#date").textContent = gallery.date_of_event;
+        copy.querySelector("#name").textContent = gallery.title.rendered;
+
+        for (i = 0; i < gallery.images.length; i++) {
+            copy.querySelector("#imageName").src = gallery.images[i].guid;
+        }
+        document.querySelector(".event-date").appendChild(copy);
+    }
+}
+
+//single gallery
+if (document.querySelector("#sub-gallery")) {
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            handleGalleryData(data)
+        })
+
+    function handleGalleryData(jsonData) {
+        jsonData.reverse();
+        console.log(jsonData);
+        jsonData.forEach(showSingleGallery);
+    }
+
+
+function showSingleGallery(subGallery) {
+    const sub_gal_template = document.querySelector("#sub-gallery-template").content;
+
+        var copy = sub_gal_template.cloneNode(true);
+
+        copy.querySelector("#date").textContent = subGallery.date_of_event;
+        copy.querySelector("#name").textContent = subGallery.title.rendered;
+
+        for (i = 0; i < subGallery.images.length; i++) {
+            const gal_img = document.createElement("img");
+            gal_img.src = subGallery.images[i].guid;
+            copy.querySelector(".sub-pic-gallery").append(gal_img);
+        }
+        document.querySelector(".singleGallery").appendChild(copy);
+    }
+}
+
+
+
 /*-------GO TO TOP BTN------------------------------*/
 
 //enable/disable scroll button based on scroller position
@@ -432,8 +537,6 @@ function topFunction() { // eslint-disable-line no-unused-vars
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
-
 
 
 /*

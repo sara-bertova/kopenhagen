@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="gallery">
+    <!--<div class="cursor"></div>-->
+    <button onclick="topFunction()" id="topBtn" title="Go to top"></button>
+
+    <header>
+        <a href="index.html"><svg id="logo" data-name="Layer 1" width="382.64" height="46.4" viewBox="0 0 382.64 46.4">
+                <defs>
+                    <style>
+                        .cls-1 {
+                            fill: none;
+                            stroke: #13064e;
+                            stroke-miterlimit: 10;
+                        }
+                    </style>
+                </defs>
+                <path class="cls-1" d="M51.72,35.38h8.1V55.82L73.25,35.38H82L67.92,56.26,84.35,79.18H74.64l-14.82-21v21h-8.1Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M87.19,57.28c0-14.67,7.52-22.7,18.11-22.7s18.1,8,18.1,22.7S115.88,80,105.3,80,87.19,72,87.19,57.28Zm27.6,0c0-10.8-3.21-16.28-9.49-16.28s-9.49,5.48-9.49,16.28S99,73.56,105.3,73.56,114.79,68.08,114.79,57.28Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M147.2,63.78h-5.48v15.4h-8.17V35.38h13.72c9,0,14.09,5.33,14.09,14.16S156.25,63.78,147.2,63.78Zm-1.75-22.56h-3.73V57.94h3.73c4.81,0,7.88-2.41,7.88-8.4S150.26,41.22,145.45,41.22Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M170.05,35.38H192.9v6.28H178.22V53.34H190v6.2H178.22V72.9H192.9v6.28H170.05Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M203.63,35.38h5.76l15.19,24.75c.65,1.09,1.82,3.21,1.82,3.21s-.14-2.7-.14-3.07V35.38h7.22v43.8h-5.76L212.53,54.36c-.29-.36-1.68-2.92-1.82-3.14,0,.07.14,2.48.14,3v25h-7.22Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M245.24,35.38h8.17V52.83h14.75V35.38h8.17v43.8h-8.17V59.4H253.41V79.18h-8.17Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M299.62,35.38h6.64l14.89,43.8h-8.24l-3.22-10.07H295.9l-3.21,10.07h-8Zm8.18,28-5-16.86-5.11,16.86Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M343.71,79.84c-10.51,0-18.18-7.81-18.18-22.56s8.18-22.48,18.84-22.48a21.57,21.57,0,0,1,12.26,3.35v6.94A18.25,18.25,0,0,0,346,41.59c-7.73,0-11.82,5.54-11.82,15.91,0,10.15,3.5,15.91,10.66,15.91a9.11,9.11,0,0,0,5.4-1.31V62.75h-5.33V56.92h13.21v19A26.84,26.84,0,0,1,343.71,79.84Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M369.92,35.38h22.85v6.28H378.09V53.34h11.76v6.2H378.09V72.9h14.68v6.28H369.92Z" transform="translate(-51.22 -34.08)" />
+                <path class="cls-1" d="M403.5,35.38h5.76l15.19,24.75c.65,1.09,1.82,3.21,1.82,3.21s-.14-2.7-.14-3.07V35.38h7.22v43.8h-5.76L412.4,54.36c-.29-.36-1.68-2.92-1.82-3.14,0,.07.14,2.48.14,3v25H403.5Z" transform="translate(-51.22 -34.08)" />
+            </svg></a>
+
+        <nav class="navm">
+        </nav>
+
+
+    </header>
+
+    <section class="event-date">
+    </section>
+
+
+    <img src="images/ads.PNG" class="ads-img">
+
+    <div class="footer-line"></div>
+    <footer>
+        <h3>DON'T WANT TO MISS ANYTHING?</h3>
+        <h4>Sign up for our newsletter today.</h4>
+
+        <div class="footer-submit-email">
+            <input name="myvalue" class="email-input" type="text" placeholder="your email adress">
+            <input type="submit" class="submitBtn" value="SIGN UP">
+        </div>
+
+    </footer>
+
+    <template id="gallery-template">
+
+        <div class="gallery">
+
+            <div class="pic-gallery">
+                <a href="sub-gallery.html?gallery_id=" class="gallery-link">
+                    <img id="imageName" src="">
+                </a>
+            </div>
+
+            <div class="gallery-text">
+                <h2 class="gal-name" id="name"></h2>
+                <h2 class="gal-date" id="date"></h2>
+            </div>
+
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body></html>

@@ -157,7 +157,11 @@ header {
     }
 
     to {
+<<<<<<< HEAD
+        fill: #13064E;
+=======
         fill: var(--text-color);
+>>>>>>> origin/master
     }
 }
 
@@ -795,4 +799,92 @@ footer h4 {
     .text {
         font-size: 11px
     }
+}
+
+/***************GALLERY**************/
+
+.gal-name{
+    color: var(--light-blue);
+    font-size: 3vmin;
+}
+.gal-date{
+    color: var(--light-blue);
+    font-size: 2vmin;
+}
+.sub-name {
+    display: flex;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5vmin;
+    color: var(--yellow-color);
+    margin-top: 7vmin;
+    margin-bottom: 0;
+}
+.sub-date {
+     display: flex;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3vmin;
+    color: var(--yellow-color);
+    margin-top:1vmin;
+}
+.event-date{
+    column-count:4;
+    column-gap:0px;
+    line-height: 0;
+}
+.gallery{
+    position: relative;
+
+}
+.pic-gallery{
+    opacity: 0.4;
+}
+
+.pic-gallery:hover{
+    opacity: 1;
+}
+
+
+.gallery-text{
+    position: absolute;
+    top: 3px;
+}
+
+.gallery img{
+    width: 100%;
+    height: auto;
+}
+.event-date{
+    padding-top: 5vmin;
+    padding-bottom: 5vmin;
+}
+
+@media (max-width: 600px){
+    .event-date{
+    column-count:1;
+}
+}
+@media only screen and (min-width:601px) and (max-width: 800px) {
+    .event-date{
+    column-count:2;
+}
+}
+@media only screen and (min-width:801px) and (max-width: 1000px) {
+    .event-date{
+    column-count:3;
+}
+}
+@media (min-width: 1001px){
+    .event-date{
+    column-count:4;
+}
 }

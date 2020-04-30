@@ -697,9 +697,10 @@ footer h4 {
 }
 
 /*CONTACT PAGE*/
-#contact {
+main#contact {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-left: 50px;
 }
 
 .first{
@@ -713,6 +714,11 @@ footer h4 {
 mark{
     background-color: var(--bg-color);
     font-weight: bold;
+    color: var(--text-color);
+}
+
+main#contact ul{
+    padding:0;
 }
 
 @media only screen and (max-width: 800px) {
@@ -827,7 +833,7 @@ mark{
     margin-bottom: 0;
 }
 .sub-date {
-     display: flex;
+    display: flex;
     width: 60%;
     margin-left: auto;
     margin-right: auto;

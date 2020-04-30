@@ -17,8 +17,13 @@ body {
     box-sizing: border-box;
 }
 
-.slider {
+.art-slider {
     width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cal-slider{
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -69,6 +74,20 @@ body {
 }
 
 /*CALENDAR SLIDER*/
+.calendar-item{
+    background: #D2E2F4;
+    height: 450px;
+}
+.calendar-item-top{
+    height: 200px;
+    padding-top: 15%;
+}
+.calendar-item-bottom{
+    width: auto;
+    height: 150px;
+    text-align: center;
+    align-items: center;
+}
 
 .slick-slide {
     margin: 0px 20px;

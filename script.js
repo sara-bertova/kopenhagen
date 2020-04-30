@@ -143,6 +143,40 @@ if (document.querySelector("#calendar")) {
         section.appendChild(filter);
         document.querySelector("#calendar").appendChild(section);
 
+        const eventSection = document.createElement("section");
+        eventSection.class = "artguide" + oneMon.name;
+        eventSection.classList.add("slider");
+        console.log(eventSection.class);
+
+        section.appendChild(eventSection);
+
+        $(eventSection).slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [{
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: true,
+                        infinite: true
+                    }
+                    },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: false,
+                        infinite: true
+                    }
+                    }
+                ]
+        });
+
+
         const month_id = oneMon.id;
         /*const link = "http://www.rasbery.eu/kph/wp-json/wp/v2/event?_embed&categories=" + month_id;
         console.log(link)*/
@@ -162,13 +196,6 @@ if (document.querySelector("#calendar")) {
             /*console.log(`#${month_id}`)*/
             console.log(month_id);
 
-            const eventSection = document.createElement("section");
-            eventSection.class = "artguide" + oneMon.name;
-            eventSection.classList.add(".slider");
-            console.log(eventSection.class);
-
-            section.appendChild(eventSection);
-
             const template = document.querySelector("#AllEvents").content;
             const clone = template.cloneNode(true);
 
@@ -184,36 +211,9 @@ if (document.querySelector("#calendar")) {
                 event_link.href += me.id;
             }
 
-            eventSection.appendChild(clone);
-
             /*document.querySelector(`#${name}`).appendChild(clone);*/
-            $(eventSection.class).slick('slickAdd', eventSection);
+            $(eventSection).slick('slickAdd', clone);
 
-            $(eventSection).slick({
-                dots: true,
-                infinite: true,
-                slidesToShow: 5,
-                slidesToScroll: 5,
-                responsive: [{
-                        breakpoint: 1000,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                            dots: true,
-                            infinite: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: false,
-                            infinite: true
-                        }
-                    }
-                ]
-            });
 
         }
     }
@@ -455,15 +455,16 @@ if (the_gallery_id) {
             showSingleGallery(data)
         })
 } else {
-    if(document.querySelector("#gallery-template")){
-    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
-        .then(function (response) {
-            return response.json()
-        })
-        .then(function (data) {
-            handleGalleryData(data)
-        })
-}}
+    if (document.querySelector("#gallery-template")) {
+        fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (data) {
+                handleGalleryData(data)
+            })
+    }
+}
 
 
 function handleGalleryData(jsonData) {
@@ -472,9 +473,10 @@ function handleGalleryData(jsonData) {
     jsonData.forEach(showGal);
 }
 
-if(document.querySelector("#gallery-template")){
+if (document.querySelector("#gallery-template")) {
 
 }
+
 function showGal(gallery) {
 
     const gallery_template = document.querySelector("#gallery-template").content;

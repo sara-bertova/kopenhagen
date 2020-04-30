@@ -260,7 +260,7 @@ function showSingleEvent(ev) {
         var copy = single_event_template.cloneNode(true);
 
         copy.querySelector("h2").textContent = `${ev.artist}` + " - " + `${ev.title.rendered}`;
-        copy.querySelector(".date span").textContent = ev.date;
+        copy.querySelector(".date span").textContent = ev.date_of_event;
         copy.querySelector(".longDes").textContent = ev.long_description;
         /*copy.querySelector(".longDes").textContent = ev.long_description.split("\n");*/
         copy.querySelector(".quote").textContent = ev.quote;

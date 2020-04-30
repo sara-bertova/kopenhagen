@@ -43,7 +43,6 @@ if (document.querySelector(".slideshow-container")) {
         jsonData.forEach(createEvents)
     }
 
-<<<<<<< HEAD
 function createEvents(oneEvent) {
 
     const div = document.createElement("div");
@@ -75,7 +74,7 @@ function createEvents(oneEvent) {
         var dots = document.getElementsByClassName("dot");
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
-=======
+
     function createEvents(oneEvent) {
         console.log(oneEvent)
         const div = document.createElement("div");
@@ -99,7 +98,6 @@ function createEvents(oneEvent) {
         div.appendChild(date);
         if (".slideshow-container") {
             document.querySelector(".slideshow-container").appendChild(div);
->>>>>>> origin/master
         }
         var slideIndex = 0;
         showSlides();

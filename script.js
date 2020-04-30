@@ -1,3 +1,4 @@
+/*//NAV MENU
 fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=13&orderby=id")
     .then(function (response) {
         return response.json()
@@ -12,8 +13,6 @@ function handleData(jsonData) {
 
 }
 
-
-//NAV MENU
 function showNav(nav) {
     console.log(nav.name)
 
@@ -28,7 +27,7 @@ function showNav(nav) {
     }
 
     document.querySelector(".navm").appendChild(cat);
-}
+}*/
 
 //AUTOMATIC SLIDESHOW - make it dynamic
 fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?per_page=4&orderby=date")
@@ -64,7 +63,9 @@ function createEvents(oneEvent) {
     div.appendChild(text);
     div.appendChild(artist);
     div.appendChild(date);
-    document.querySelector(".slideshow-container").appendChild(div);
+    if (".slideshow-container") {
+        document.querySelector(".slideshow-container").appendChild(div);
+    }
     var slideIndex = 0;
     showSlides();
 
@@ -88,8 +89,21 @@ function createEvents(oneEvent) {
     }
 }
 
+//FILTER
+const modal = document.querySelector(".modal-background");
+const modal_btn = document.querySelector(".modal-btn");
+if (modal_btn) {
+    modal_btn.addEventListener("click", () => {
+        modal.classList.add("hide");
+    });
+}
 
-/*//DYNAMIC MONTHS IN CALENDAR
+/*document.querySelector(".filter-btn").addEventListener("click", showFilter);
+function showFilter(data) {
+    modal.classList.remove("hide");
+}*/
+
+//DYNAMIC MONTHS IN CALENDAR, EVENTS ACCORDING TO MONTHS
 if (document.querySelector("#calendar")) {
     fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
         .then(function (response) {
@@ -105,16 +119,74 @@ if (document.querySelector("#calendar")) {
 
     function createMonths(oneMon) {
         console.log(oneMon)
-
+        const section = document.createElement("section");
+        const name = oneMon.name;
+        section.id = name;
         const h2 = document.createElement("h2");
         h2.textContent = oneMon.name;
         h2.classList.add("blue-heading");
+        section.appendChild(h2);
         const filter = document.createElement("img");
         filter.src = "icons/filter-small.png";
-        document.querySelector("#calendar").appendChild(h2);
-        document.querySelector("#calendar").appendChild(filter);
+        /*filter.classList.add("filter-btn");*/
+        filter.addEventListener("click", showFilter);
+
+        function showFilter(data) {
+            modal.classList.remove("hide");
+        }
+        section.appendChild(filter);
+        document.querySelector("#calendar").appendChild(section);
+
+        const month_id = oneMon.id;
+        /*const link = "http://www.rasbery.eu/kph/wp-json/wp/v2/event?_embed&categories=" + month_id;
+        console.log(link)*/
+        fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?_embed&categories=" + month_id)
+            .then(function (response) {
+                return response.json()
+            })
+            .then(function (data) {
+                showMData(data)
+            })
+
+        function showMData(jsonData) {
+            jsonData.forEach(showMonthEvents)
+        }
+
+        function showMonthEvents(me) {
+            /*console.log(`#${month_id}`)*/
+            console.log(month_id)
+            const template = document.querySelector("#AllEvents").content;
+            const clone = template.cloneNode(true);
+
+            /*clone.querySelector(".eventImage").src = me.image.guid;*/
+            clone.querySelector("h3").textContent = me.title.rendered;
+            clone.querySelector(".location").textContent = `${me.gallery}` + ", " + `${me.address}`;
+            clone.querySelector(".date").textContent = me.date_of_event;
+            clone.querySelector(".artistev").textContent = me.artist;
+            clone.querySelector(".type").textContent = me.type_of_event;
+            clone.querySelector(".excerpt").innerHTML = me.excerpt.rendered;
+            const event_link = clone.querySelector(".read-more-btn-events");
+            if (event_link) {
+                event_link.href += me.id;
+            }
+            document.querySelector(`#${name}`).appendChild(clone);
+
+        }
     }
 
+}
+
+
+
+/*//Calendar in the filter
+const calendar = document.querySelector(".input");
+calendar.addEventListener("click", () => {
+    calendar.classList.add("hide");
+});
+
+document.querySelector(".when").addEventListener("click", showCalendar);
+function showCalendar(data) {
+    calendar.classList.remove("hide");
 }*/
 
 //ADD EVENTS TO CALENDAR
@@ -148,11 +220,11 @@ function showData(jsonData) {
 
 
 function showEvent(event) {
-    console.log(event)
+    /*console.log(event)
     const template = document.querySelector("#AllEvents").content;
     const clone = template.cloneNode(true);
 
-    /*clone.querySelector(".eventImage").src = event.image.guid;*/
+    clone.querySelector(".eventImage").src = event.image.guid;
     clone.querySelector("h3").textContent = event.title.rendered;
     clone.querySelector(".location").textContent = `${event.gallery}` + ", " + `${event.address}`;
     clone.querySelector(".date").textContent = event.date_of_event;
@@ -163,7 +235,20 @@ function showEvent(event) {
     if (event_link) {
         event_link.href += event.id;
     }
-    document.querySelector("#calendar").appendChild(clone);
+    document.querySelector("#calendar").appendChild(clone);*/
+
+    const dropdown_location = document.createElement("option");
+    dropdown_location.nodeValue = event.gallery;
+    dropdown_location.textContent = event.gallery;
+    document.querySelector("#location").appendChild(dropdown_location);
+
+    const dropdown_artist = document.createElement("option");
+    dropdown_artist.nodeValue = event.artist;
+    dropdown_artist.textContent = event.artist;
+    document.querySelector("#ddartists").appendChild(dropdown_artist);
+
+
+
 }
 
 
@@ -177,6 +262,7 @@ function showSingleEvent(ev) {
         copy.querySelector("h2").textContent = `${ev.artist}` + " - " + `${ev.title.rendered}`;
         copy.querySelector(".date span").textContent = ev.date;
         copy.querySelector(".longDes").textContent = ev.long_description;
+        /*copy.querySelector(".longDes").textContent = ev.long_description.split("\n");*/
         copy.querySelector(".quote").textContent = ev.quote;
         copy.querySelector(".oh span").textContent = ev.opening_hours;
         copy.querySelector(".e-mail span").textContent = ev.email;

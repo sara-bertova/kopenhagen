@@ -310,7 +310,8 @@ img {
 }
 
 #event p span,
-#event p.longDes, #event a.web {
+#event p.longDes,
+#event a.web {
     color: var(--text-color);
     font-weight: normal;
 }
@@ -322,6 +323,7 @@ img {
 
 /*#event p.longDes{
     column-count: 2;
+    text-align: left;
 }*/
 
 #event p.quote {
@@ -583,7 +585,8 @@ footer h4 {
 
 .about-artist,
 .about-event,
-#event p, #event a.web {
+#event p,
+#event a.web {
     font-size: 20px;
     line-height: 25px;
     text-align: justify;
@@ -602,7 +605,7 @@ footer h4 {
     padding-top: 0;
 }
 
-#event p{
+#event p {
     padding: 0;
     margin: 5px auto 0 auto;
 }
@@ -619,6 +622,77 @@ footer h4 {
 
 .art-images {
     display: none;
+}
+
+/*MODAL*/
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 1em;
+    padding: 2.5em;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;*/
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*SLIDER - price, filter*/
+.slidecon {
+    width: 100%;
+}
+
+.priceslider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: white;
+    border: 1px solid var(--text-color);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.priceslider:hover {
+    opacity: 1;
+}
+
+.priceslider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--text-color);
+    cursor: pointer;
+}
+
+.priceslider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--yellow-color);
+    cursor: pointer;
 }
 
 

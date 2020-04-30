@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +24,7 @@
                             stroke: #13064e;
                             stroke-miterlimit: 10;
                         }
+
                     </style>
                 </defs>
                 <path class="cls-1" d="M51.72,35.38h8.1V55.82L73.25,35.38H82L67.92,56.26,84.35,79.18H74.64l-14.82-21v21h-8.1Z" transform="translate(-51.22 -34.08)" />
@@ -40,7 +42,7 @@
         <!--<nav class="navm">
         </nav>-->
 
-   <nav>
+        <nav>
             <a href="calendar.html">Art Guide</a>
             <a href="category.html">Gallery</a>
             <a href="contact.html">Contact</a>
@@ -48,16 +50,18 @@
 
     </header>
 
+    <!--<img class="filter-btn" src="icons/filter-small.png">-->
+
     <main id="calendar"></main>
     <template id="AllEvents">
-            <img class="eventImage" src="">
-            <h3>NAME</h3>
-            <p class="location"></p>
-            <p class="date"></p>
-            <p class="artistev"></p>
-            <p class="type"></p>
-            <p class="excerpt"></p>
-            <a href="singleevent.html?event_id=" class="read-more-btn-events">Read More</a>
+        <img class="eventImage" src="">
+        <h3>NAME</h3>
+        <p class="location"></p>
+        <p class="date"></p>
+        <p class="artistev"></p>
+        <p class="type"></p>
+        <p class="excerpt"></p>
+        <a href="singleevent.html?event_id=" class="read-more-btn-events">Read More</a>
     </template>
 
 
@@ -82,8 +86,28 @@
         </div>
 
     </footer>
-
+    <div class="modal-background hide">
+        <div class="modal-content">
+            <h2>Where?</h2>
+            <select id="location" name="location">
+            </select>
+            <h2>Who?</h2>
+            <select id="ddartists" name="ddartists">
+            </select>
+            <h2>When?</h2>
+            <input type="date" name="">
+            <img class="when" src="icons/calendar.png">
+            <h2>What?</h2>
+            <h2>How much?</h2>
+            <div class="slidecon">
+                <input type="range" min="1" max="100" value="50" class="priceslider" id="myRange">
+            </div>
+            <button class="modal-btn">APPLY</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 
-</body></html>
+</body>
+
+</html>

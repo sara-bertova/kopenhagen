@@ -444,7 +444,17 @@ function showSingleArt(art) {
 }
 
 //Gallery
-if (document.querySelector("#gallery")) {
+const the_gallery_id = urlParams.get("gallery_id");
+
+if (the_gallery_id) {
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery/" + the_gallery_id + "?_embed")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            showSingleGallery(data)
+        })
+} else {
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
         .then(function (response) {
             return response.json()
@@ -452,34 +462,33 @@ if (document.querySelector("#gallery")) {
         .then(function (data) {
             handleGalleryData(data)
         })
-
-    function handleGalleryData(jsonData) {
-        jsonData.reverse();
-        console.log(jsonData);
-        jsonData.forEach(showDate);
-    }
-
-    function showDate(gallery) {
-
-        const gal_template = document.querySelector("#gallery-template").content;
-
-        var copy = gal_template.cloneNode(true);
-
-        const gallery_link = copy.querySelector(".gallery-link");
-        if (gallery_link) {
-            gallery_link.href += gallery.id;
-        }
-
-        copy.querySelector("#date").textContent = gallery.date_of_event;
-        copy.querySelector("#name").textContent = gallery.title.rendered;
-
-        for (i = 0; i < gallery.images.length; i++) {
-            copy.querySelector("#imageName").src = gallery.images[i].guid;
-        }
-        document.querySelector(".event-date").appendChild(copy);
-    }
 }
 
+
+function handleGalleryData(jsonData) {
+    jsonData.reverse();
+    console.log(jsonData);
+    jsonData.forEach(showGal);
+}
+
+function showGal(gallery) {
+
+    const gallery_template = document.querySelector("#gallery-template").content;
+
+    var copy = gallery_template.cloneNode(true);
+
+    const gallery_link = copy.querySelector(".gallery-link");
+    if (gallery_link) {
+        gallery_link.href += gallery.id;
+    }
+
+<<<<<<< HEAD
+    copy.querySelector("#date").textContent = gallery.date_of_event;
+    copy.querySelector("#name").textContent = gallery.title.rendered;
+
+    for (i = 0; i < gallery.images.length; i++) {
+        copy.querySelector("#imageName").src = gallery.images[i].guid;
+=======
 //single gallery
 if (document.querySelector("#sub-gallery")) {
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
@@ -494,27 +503,28 @@ if (document.querySelector("#sub-gallery")) {
         jsonData.reverse();
         console.log(jsonData);
         jsonData.forEach(showSingleGallery);
+>>>>>>> origin/master
     }
+}
 
+function showSingleGallery(gallery) {
 
-    function showSingleGallery(subGallery) {
-        const sub_gal_template = document.querySelector("#sub-gallery-template").content;
-
-        var copy = sub_gal_template.cloneNode(true);
+    if (document.querySelector("#sub-gallery-template")) {
+        const sub_gallery_template = document.querySelector("#sub-gallery-template").content;
+        var copy = sub_gallery_template.cloneNode(true);
 
         copy.querySelector("#date").textContent = subGallery.date_of_event;
         copy.querySelector("#name").textContent = subGallery.title.rendered;
-
         for (i = 0; i < subGallery.images.length; i++) {
             const gal_img = document.createElement("img");
             gal_img.src = subGallery.images[i].guid;
             copy.querySelector(".sub-pic-gallery").append(gal_img);
         }
-        document.querySelector(".singleGallery").appendChild(copy);
+
+        document.querySelector(".event-date").appendChild(copy);
     }
+
 }
-
-
 
 /*-------GO TO TOP BTN------------------------------*/
 

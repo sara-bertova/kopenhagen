@@ -168,7 +168,7 @@ if (document.querySelector("#calendar")) {
             clone.querySelector(".artistev").textContent = me.artist;
             clone.querySelector(".type").textContent = me.type_of_event;
             /*clone.querySelector(".excerpt").innerHTML = me.excerpt.rendered;*/
-            const event_link = clone.querySelector(".read-more-btn-events");
+            const event_link = clone.querySelector(".read-more-btn");
             if (event_link) {
                 event_link.href += me.id;
             }

@@ -167,13 +167,13 @@ if (document.querySelector("#calendar")) {
             clone.querySelector(".date").textContent = me.date_of_event;
             clone.querySelector(".artistev").textContent = me.artist;
             clone.querySelector(".type").textContent = me.type_of_event;
-            clone.querySelector(".excerpt").innerHTML = me.excerpt.rendered;
+            /*clone.querySelector(".excerpt").innerHTML = me.excerpt.rendered;*/
             const event_link = clone.querySelector(".read-more-btn-events");
             if (event_link) {
                 event_link.href += me.id;
             }
-            document.querySelector(`#${name}`).appendChild(clone);
-            /*$('.artguid').slick('slickAdd', clone);*/
+            /*document.querySelector(`#${name}`).appendChild(clone);*/
+            $('.artguid').slick('slickAdd', clone);
 
         }
     }

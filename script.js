@@ -199,7 +199,7 @@ if (document.querySelector("#calendar")) {
             const template = document.querySelector("#AllEvents").content;
             const clone = template.cloneNode(true);
 
-            /*clone.querySelector(".eventImage").src = me.image.guid;*/
+            clone.querySelector(".eventImage").src = me.image.guid;
             clone.querySelector("h3").textContent = me.title.rendered;
             clone.querySelector(".location").textContent = `${me.gallery}` + ", " + `${me.address}`;
             clone.querySelector(".date").textContent = me.date_of_event;

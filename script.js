@@ -30,64 +30,67 @@ function showNav(nav) {
 }*/
 
 //AUTOMATIC SLIDESHOW - make it dynamic
-fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?per_page=4&orderby=date")
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        handleSlide(data)
-    })
+if (document.querySelector(".slideshow-container")) {
+    fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?per_page=4&orderby=date")
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            handleSlide(data)
+        })
 
-function handleSlide(jsonData) {
-    jsonData.forEach(createEvents)
+    function handleSlide(jsonData) {
+        jsonData.forEach(createEvents)
+    }
+
+    function createEvents(oneEvent) {
+        console.log(oneEvent)
+        const div = document.createElement("div");
+        div.classList.add("mySlides");
+        div.classList.add("fade");
+        const img = document.createElement("img");
+        img.src = oneEvent.image.guid;
+        img.style.width = "100%";
+        const text = document.createElement("div");
+        text.classList.add("text");
+        text.textContent = oneEvent.title.rendered;
+        const artist = document.createElement("div");
+        artist.classList.add("eventArtist");
+        artist.textContent = oneEvent.artist;
+        const date = document.createElement("div");
+        date.classList.add("eventDate");
+        date.textContent = oneEvent.date_of_event;
+        div.appendChild(img);
+        div.appendChild(text);
+        div.appendChild(artist);
+        div.appendChild(date);
+        if (".slideshow-container") {
+            document.querySelector(".slideshow-container").appendChild(div);
+        }
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    }
 }
 
-function createEvents(oneEvent) {
-    console.log(oneEvent)
-    const div = document.createElement("div");
-    div.classList.add("mySlides");
-    div.classList.add("fade");
-    const img = document.createElement("img");
-    img.src = oneEvent.image.guid;
-    img.style.width = "100%";
-    const text = document.createElement("div");
-    text.classList.add("text");
-    text.textContent = oneEvent.title.rendered;
-    const artist = document.createElement("div");
-    artist.classList.add("eventArtist");
-    artist.textContent = oneEvent.artist;
-    const date = document.createElement("div");
-    date.classList.add("eventDate");
-    date.textContent = oneEvent.date_of_event;
-    div.appendChild(img);
-    div.appendChild(text);
-    div.appendChild(artist);
-    div.appendChild(date);
-    if (".slideshow-container") {
-        document.querySelector(".slideshow-container").appendChild(div);
-    }
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 5000); // Change image every 5 seconds
-    }
-}
 
 //FILTER
 const modal = document.querySelector(".modal-background");
@@ -170,13 +173,12 @@ if (document.querySelector("#calendar")) {
                 event_link.href += me.id;
             }
             document.querySelector(`#${name}`).appendChild(clone);
+            /*$('.artguid').slick('slickAdd', clone);*/
 
         }
     }
 
 }
-
-
 
 /*//Calendar in the filter
 const calendar = document.querySelector(".input");
@@ -211,9 +213,6 @@ if (the_event_id) {
         })
 }
 
-
-
-
 function showData(jsonData) {
     jsonData.forEach(showEvent)
 }
@@ -237,7 +236,8 @@ function showEvent(event) {
     }
     document.querySelector("#calendar").appendChild(clone);*/
 
-    const dropdown_location = document.createElement("option");
+    if(document.querySelector("#ddartists")){
+          const dropdown_location = document.createElement("option");
     dropdown_location.nodeValue = event.gallery;
     dropdown_location.textContent = event.gallery;
     document.querySelector("#location").appendChild(dropdown_location);
@@ -246,12 +246,13 @@ function showEvent(event) {
     dropdown_artist.nodeValue = event.artist;
     dropdown_artist.textContent = event.artist;
     document.querySelector("#ddartists").appendChild(dropdown_artist);
+    }
+
+
 
 
 
 }
-
-
 
 function showSingleEvent(ev) {
 

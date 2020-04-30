@@ -447,10 +447,10 @@ if (document.querySelector("#sub-gallery")) {
             return response.json()
         })
         .then(function (data) {
-            handleGalleryData(data)
+            handleSingleGalleryData(data)
         })
 
-    function handleGalleryData(jsonData) {
+    function handleSingleGalleryData(jsonData) {
         jsonData.reverse();
         console.log(jsonData);
         jsonData.forEach(showSingleGallery);

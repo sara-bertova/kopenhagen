@@ -455,6 +455,7 @@ if (the_gallery_id) {
             showSingleGallery(data)
         })
 } else {
+    if(document.querySelector("#gallery-template")){
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
         .then(function (response) {
             return response.json()
@@ -462,7 +463,7 @@ if (the_gallery_id) {
         .then(function (data) {
             handleGalleryData(data)
         })
-}
+}}
 
 
 function handleGalleryData(jsonData) {

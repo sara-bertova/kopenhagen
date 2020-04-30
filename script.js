@@ -471,6 +471,9 @@ function handleGalleryData(jsonData) {
     jsonData.forEach(showGal);
 }
 
+if(document.querySelector("#gallery-template")){
+
+}
 function showGal(gallery) {
 
     const gallery_template = document.querySelector("#gallery-template").content;
@@ -482,29 +485,13 @@ function showGal(gallery) {
         gallery_link.href += gallery.id;
     }
 
-<<<<<<< HEAD
     copy.querySelector("#date").textContent = gallery.date_of_event;
     copy.querySelector("#name").textContent = gallery.title.rendered;
 
     for (i = 0; i < gallery.images.length; i++) {
         copy.querySelector("#imageName").src = gallery.images[i].guid;
-=======
-//single gallery
-if (document.querySelector("#sub-gallery")) {
-    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
-        .then(function (response) {
-            return response.json()
-        })
-        .then(function (data) {
-            handleSingleGalleryData(data)
-        })
-
-    function handleSingleGalleryData(jsonData) {
-        jsonData.reverse();
-        console.log(jsonData);
-        jsonData.forEach(showSingleGallery);
->>>>>>> origin/master
     }
+    document.querySelector(".event-date").appendChild(copy);
 }
 
 function showSingleGallery(gallery) {
@@ -513,15 +500,15 @@ function showSingleGallery(gallery) {
         const sub_gallery_template = document.querySelector("#sub-gallery-template").content;
         var copy = sub_gallery_template.cloneNode(true);
 
-        copy.querySelector("#date").textContent = subGallery.date_of_event;
-        copy.querySelector("#name").textContent = subGallery.title.rendered;
-        for (i = 0; i < subGallery.images.length; i++) {
+        copy.querySelector("#date").textContent = gallery.date_of_event;
+        copy.querySelector("#name").textContent = gallery.title.rendered;
+        for (i = 0; i < gallery.images.length; i++) {
             const gal_img = document.createElement("img");
-            gal_img.src = subGallery.images[i].guid;
+            gal_img.src = gallery.images[i].guid;
             copy.querySelector(".sub-pic-gallery").append(gal_img);
         }
 
-        document.querySelector(".event-date").appendChild(copy);
+        document.querySelector(".singleGallery").appendChild(copy);
     }
 
 }

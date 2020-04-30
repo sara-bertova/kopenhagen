@@ -157,11 +157,8 @@ header {
     }
 
     to {
-<<<<<<< HEAD
-        fill: #13064E;
-=======
         fill: var(--text-color);
->>>>>>> origin/master
+
     }
 }
 

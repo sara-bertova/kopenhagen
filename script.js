@@ -43,38 +43,6 @@ if (document.querySelector(".slideshow-container")) {
         jsonData.forEach(createEvents)
     }
 
-function createEvents(oneEvent) {
-
-    const div = document.createElement("div");
-    div.classList.add("mySlides");
-    div.classList.add("fade");
-    const img = document.createElement("img");
-    img.src = oneEvent.image.guid;
-    img.style.width = "100%";
-    const text = document.createElement("div");
-    text.classList.add("text");
-    text.textContent = oneEvent.title.rendered;
-    const artist = document.createElement("div");
-    artist.classList.add("eventArtist");
-    artist.textContent = oneEvent.artist;
-    const date = document.createElement("div");
-    date.classList.add("eventDate");
-    date.textContent = oneEvent.date_of_event;
-    div.appendChild(img);
-    div.appendChild(text);
-    div.appendChild(artist);
-    div.appendChild(date);
-    document.querySelector(".slideshow-container").appendChild(div);
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-
     function createEvents(oneEvent) {
         console.log(oneEvent)
         const div = document.createElement("div");
@@ -268,22 +236,17 @@ function showEvent(event) {
     }
     document.querySelector("#calendar").appendChild(clone);*/
 
-    if(document.querySelector("#ddartists")){
-          const dropdown_location = document.createElement("option");
-    dropdown_location.nodeValue = event.gallery;
-    dropdown_location.textContent = event.gallery;
-    document.querySelector("#location").appendChild(dropdown_location);
+    if (document.querySelector("#ddartists")) {
+        const dropdown_location = document.createElement("option");
+        dropdown_location.nodeValue = event.gallery;
+        dropdown_location.textContent = event.gallery;
+        document.querySelector("#location").appendChild(dropdown_location);
 
-    const dropdown_artist = document.createElement("option");
-    dropdown_artist.nodeValue = event.artist;
-    dropdown_artist.textContent = event.artist;
-    document.querySelector("#ddartists").appendChild(dropdown_artist);
+        const dropdown_artist = document.createElement("option");
+        dropdown_artist.nodeValue = event.artist;
+        dropdown_artist.textContent = event.artist;
+        document.querySelector("#ddartists").appendChild(dropdown_artist);
     }
-
-
-
-
-
 }
 
 function showSingleEvent(ev) {
@@ -462,7 +425,7 @@ if (document.querySelector("#gallery")) {
 
         var copy = gal_template.cloneNode(true);
 
-         const gallery_link = copy.querySelector(".gallery-link");
+        const gallery_link = copy.querySelector(".gallery-link");
         if (gallery_link) {
             gallery_link.href += gallery.id;
         }
@@ -494,8 +457,8 @@ if (document.querySelector("#sub-gallery")) {
     }
 
 
-function showSingleGallery(subGallery) {
-    const sub_gal_template = document.querySelector("#sub-gallery-template").content;
+    function showSingleGallery(subGallery) {
+        const sub_gal_template = document.querySelector("#sub-gallery-template").content;
 
         var copy = sub_gal_template.cloneNode(true);
 

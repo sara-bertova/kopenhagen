@@ -710,6 +710,11 @@ footer h4 {
     grid-column: 2;
 }
 
+mark{
+    background-color: var(--bg-color);
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 800px) {
     #logo {
         margin-left: 0;

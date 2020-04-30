@@ -695,6 +695,19 @@ footer h4 {
     cursor: pointer;
 }
 
+/*CONTACT PAGE*/
+#contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.first{
+    grid-column: 1;
+}
+
+.second{
+    grid-column: 2;
+}
 
 @media only screen and (max-width: 800px) {
     #logo {

@@ -125,10 +125,13 @@ if (document.querySelector("#calendar")) {
         const section = document.createElement("section");
         const name = oneMon.name;
         section.id = name;
+
         const h2 = document.createElement("h2");
         h2.textContent = oneMon.name;
         h2.classList.add("blue-heading");
+
         section.appendChild(h2);
+
         const filter = document.createElement("img");
         filter.src = "icons/filter-small.png";
         /*filter.classList.add("filter-btn");*/
@@ -157,7 +160,15 @@ if (document.querySelector("#calendar")) {
 
         function showMonthEvents(me) {
             /*console.log(`#${month_id}`)*/
-            console.log(month_id)
+            console.log(month_id);
+
+            const eventSection = document.createElement("section");
+            eventSection.class = "artguide" + oneMon.name;
+            eventSection.classList.add(".slider");
+            console.log(eventSection.class);
+
+            section.appendChild(eventSection);
+
             const template = document.querySelector("#AllEvents").content;
             const clone = template.cloneNode(true);
 
@@ -172,8 +183,37 @@ if (document.querySelector("#calendar")) {
             if (event_link) {
                 event_link.href += me.id;
             }
+
+            eventSection.appendChild(clone);
+
             /*document.querySelector(`#${name}`).appendChild(clone);*/
-            $('.artguid').slick('slickAdd', clone);
+            $(eventSection.class).slick('slickAdd', eventSection);
+
+            $(eventSection).slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                responsive: [{
+                        breakpoint: 1000,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: true,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false,
+                            infinite: true
+                        }
+                    }
+                ]
+            });
 
         }
     }
@@ -441,22 +481,20 @@ if (document.querySelector("#gallery")) {
 }
 
 //single gallery
-const gallery_id = urlParams.get("gallery_id")
-
-if (gallery_id) {
-    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery/" + gallery_id + "?_embed")
+if (document.querySelector("#sub-gallery")) {
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
-            showSingleGallery(data)
+            handleSingleGalleryData(data)
         })
 
-    /*function handleSingleGalleryData(jsonData) {
+    function handleSingleGalleryData(jsonData) {
         jsonData.reverse();
         console.log(jsonData);
         jsonData.forEach(showSingleGallery);
-    }*/
+    }
 
 
     function showSingleGallery(subGallery) {

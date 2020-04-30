@@ -441,20 +441,22 @@ if (document.querySelector("#gallery")) {
 }
 
 //single gallery
-if (document.querySelector("#sub-gallery")) {
-    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery?orderby=id")
+const gallery_id = urlParams.get("gallery_id")
+
+if (gallery_id) {
+    fetch("http://rasbery.eu/kph/wp-json/wp/v2/gallery/" + gallery_id + "?_embed")
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
-            handleSingleGalleryData(data)
+            showSingleGallery(data)
         })
 
-    function handleSingleGalleryData(jsonData) {
+    /*function handleSingleGalleryData(jsonData) {
         jsonData.reverse();
         console.log(jsonData);
         jsonData.forEach(showSingleGallery);
-    }
+    }*/
 
 
     function showSingleGallery(subGallery) {

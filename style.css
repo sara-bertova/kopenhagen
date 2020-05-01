@@ -174,6 +174,11 @@ nav a:hover, #event a.web:hover {
     color: var(--red-color);
 }
 
+.nav-selected{
+    color: var(--red-color);
+}
+
+
 #event a.web{
     transition: .5s;
 }
@@ -303,6 +308,32 @@ img {
 
 .red-heading {
     color: var(--red-color);
+}
+
+.alphabet{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+}
+.alphabet > p{
+    text-align: center;
+    margin-right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.alphabet > p:hover{
+    color: var(--tex-color);
+}
+.alphabet-selected{
+    color: var(--text-color);
+}
+.alphabet-other{
+    color: white;
 }
 
 #event {
@@ -545,6 +576,16 @@ footer h4 {
     margin: 0;
 
     text-align: end;
+}
+
+.single-artist-event{
+    text-decoration: none;
+    color: var(--yellow-color);
+    transition: .5s;
+}
+.single-artist-event:hover{
+    text-decoration: underline;
+    color: var(--text-color);
 }
 
 .short-description-holder {

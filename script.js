@@ -145,7 +145,7 @@ if (document.querySelector("#calendar")) {
 
         const eventSection = document.createElement("section");
         eventSection.class = "artguide" + oneMon.name;
-        eventSection.classList.add("slider");
+        eventSection.classList.add("cal-slider");
         console.log(eventSection.class);
 
         section.appendChild(eventSection);
@@ -360,22 +360,30 @@ if (the_artist_id) {
             showSingleArt(data)
         })
 } else {
+    fetchArtistData("B");
+}
+
+function fetchArtistData(artistAlphabet) {
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
         .then(function (response) {
             return response.json()
         })
         .then(function (data) {
-            handleArtistsData(data)
+            handleArtistsData(data, artistAlphabet)
         })
 }
 
-
-function handleArtistsData(jsonData) {
+function handleArtistsData(jsonData, artistAlphabet) {
     jsonData.reverse();
-    jsonData.forEach(showArt)
+    jsonData.forEach(function (item, index){
+        showArt(item, artistAlphabet);
+    });
 }
 
-function showArt(art) {
+function showArt(art, artistAlphabet) {
+    if(art.alphabet != artistAlphabet){
+        return;
+    }
 
     if (document.querySelector("#slider-template")) {
         const slider_template = document.querySelector("#slider-template").content;
@@ -516,6 +524,12 @@ function showSingleGallery(gallery) {
         document.querySelector(".singleGallery").appendChild(copy);
     }
 
+}
+
+function alphabetClick(char){
+    //console.log(char.textContent);
+    $('.artists').slick('slickRemove', null, null, true);
+    fetchArtistData(char.textContent);
 }
 
 /*-------GO TO TOP BTN------------------------------*/

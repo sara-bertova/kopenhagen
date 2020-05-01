@@ -17,15 +17,14 @@ body {
     box-sizing: border-box;
 }
 
-.art-slider {
+.art-slider, .cal-slider{
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
-.cal-slider, .slider{
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+
+.cal-slider{
+  margin-top: 20px;
 }
 
 /*ARTIST SLIDER*/

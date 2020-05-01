@@ -312,7 +312,7 @@ function showSingleEvent(ev) {
         copy.querySelector(".oh span").textContent = ev.opening_hours;
         copy.querySelector(".e-mail span").textContent = ev.email;
         copy.querySelector(".phone span").textContent = ev.phone;
-        copy.querySelector(".web span").textContent = ev.web;
+        copy.querySelector(".web span mark").textContent = ev.web;
         /*copy.querySelector(".website span").textContent = ev.web;*/
         copy.querySelector(".web").href = ev.web;
         copy.querySelector(".evimg").src = ev.image.guid;

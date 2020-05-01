@@ -308,6 +308,7 @@ img {
 
 .blue-heading {
     color: var(--light-blue);
+    /*margin-top: 100px;*/
 }
 
 .red-heading {
@@ -503,7 +504,7 @@ mark {
 .ads-img {
     display: block;
     width: 35%;
-    margin: 50px auto;
+    margin: 70px auto;
 }
 
 .footer-line {
@@ -698,7 +699,6 @@ footer h4 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    cursor: pointer;
     overflow: auto;
 }
 
@@ -712,6 +712,10 @@ footer h4 {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.modal-btn{
+    cursor: pointer;
 }
 
 

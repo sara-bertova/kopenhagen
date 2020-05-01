@@ -134,6 +134,7 @@ if (document.querySelector("#calendar")) {
 
         const filter = document.createElement("img");
         filter.src = "icons/filter-small.png";
+        filter.classList.add("contact-icon");
         /*filter.classList.add("filter-btn");*/
         filter.addEventListener("click", showFilter);
 
@@ -202,7 +203,8 @@ if (document.querySelector("#calendar")) {
             /*clone.querySelector(".eventImage").src = me.image.guid;*/
             clone.querySelector(".eventImage").src = me.slider_image.guid;
             clone.querySelector("h3").textContent = me.title.rendered;
-            clone.querySelector(".location").textContent = `${me.gallery}` + ", " + `${me.address}`;
+            /*clone.querySelector(".location").textContent = `${me.gallery}` + ", " + `${me.address}`;*/
+            clone.querySelector(".location").textContent = me.gallery;
             clone.querySelector(".date").textContent = me.date_of_event;
             clone.querySelector(".artistev").textContent = me.artist;
             clone.querySelector(".type").textContent = me.type_of_event;

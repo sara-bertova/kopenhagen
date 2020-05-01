@@ -56,7 +56,7 @@ if (document.querySelector(".slideshow-container")) {
         text.textContent = oneEvent.title.rendered;
         const artist = document.createElement("div");
         artist.classList.add("eventArtist");
-        artist.textContent = oneEvent.artist;
+        artist.textContent = `${oneEvent.artist}` + ", " + `${oneEvent.gallery}`;
         const date = document.createElement("div");
         date.classList.add("eventDate");
         date.textContent = oneEvent.date_of_event;

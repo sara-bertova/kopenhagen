@@ -359,7 +359,7 @@ if (the_artist_id) {
         .then(function (data) {
             showSingleArt(data)
         })
-} else {
+} else if (document.querySelector(".alphabet")){
     generateAlphabet();
     fetchArtistData("A");
 }
@@ -377,17 +377,17 @@ function fetchArtistData(artistAlphabet) {
         })
 }
 
-function markSelectedAlphabet(alphabet){
+function markSelectedAlphabet(alphabet) {
     const adiv = document.querySelector(".alphabet").children;
-    for(i in adiv){
-        if(adiv[i].classList != null){
-          if (alphabet == adiv[i].textContent){
-            adiv[i].classList.add("alphabet-selected");
-            adiv[i].classList.remove("alphabet-other");
-        }else{
-            adiv[i].classList.add("alphabet-other");
-            adiv[i].classList.remove("alphabet-selected");
-        }
+    for (i in adiv) {
+        if (adiv[i].classList != null) {
+            if (alphabet == adiv[i].textContent) {
+                adiv[i].classList.add("alphabet-selected");
+                adiv[i].classList.remove("alphabet-other");
+            } else {
+                adiv[i].classList.add("alphabet-other");
+                adiv[i].classList.remove("alphabet-selected");
+            }
         }
 
     }
@@ -555,19 +555,20 @@ function alphabetClick(char) {
 }
 
 function generateAlphabet() {
-    var alphabets = [];
-    var start = 'A'.charCodeAt(0);
-    var last = 'Z'.charCodeAt(0);
-    for (var i = start; i <= last; ++i) {
-        console.log(String.fromCharCode(i));
-        const at = document.querySelector("#alphabet-template").content;
-        var copy = at.cloneNode(true);
-        copy.querySelector(".alphabet-other").textContent = String.fromCharCode(i);
 
-        document.querySelector(".alphabet").appendChild(copy);
+    if (document.querySelector("#alphabet-template")) {
+        var alphabets = [];
+        var start = 'A'.charCodeAt(0);
+        var last = 'Z'.charCodeAt(0);
+        for (var i = start; i <= last; ++i) {
+            //console.log(String.fromCharCode(i));
+            const at = document.querySelector("#alphabet-template").content;
+            var copy = at.cloneNode(true);
+            copy.querySelector(".alphabet-other").textContent = String.fromCharCode(i);
+
+            document.querySelector(".alphabet").appendChild(copy);
+        }
     }
-
-    console.log(alphabets.join(''));
 }
 
 /*-------GO TO TOP BTN------------------------------*/

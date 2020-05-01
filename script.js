@@ -360,10 +360,14 @@ if (the_artist_id) {
             showSingleArt(data)
         })
 } else {
-    fetchArtistData("B");
+    generateAlphabet();
+    fetchArtistData("A");
 }
 
 function fetchArtistData(artistAlphabet) {
+
+    markSelectedAlphabet(artistAlphabet);
+
     fetch("http://rasbery.eu/kph/wp-json/wp/v2/artist?orderby=id")
         .then(function (response) {
             return response.json()
@@ -373,15 +377,32 @@ function fetchArtistData(artistAlphabet) {
         })
 }
 
+function markSelectedAlphabet(alphabet){
+    const adiv = document.querySelector(".alphabet").children;
+    for(i in adiv){
+        if(adiv[i].classList != null){
+          if (alphabet == adiv[i].textContent){
+            adiv[i].classList.add("alphabet-selected");
+            adiv[i].classList.remove("alphabet-other");
+        }else{
+            adiv[i].classList.add("alphabet-other");
+            adiv[i].classList.remove("alphabet-selected");
+        }
+        }
+
+    }
+
+}
+
 function handleArtistsData(jsonData, artistAlphabet) {
     jsonData.reverse();
-    jsonData.forEach(function (item, index){
+    jsonData.forEach(function (item, index) {
         showArt(item, artistAlphabet);
     });
 }
 
 function showArt(art, artistAlphabet) {
-    if(art.alphabet != artistAlphabet){
+    if (art.alphabet != artistAlphabet) {
         return;
     }
 
@@ -398,6 +419,7 @@ function showArt(art, artistAlphabet) {
         copy.querySelector(".artist-name").textContent = art.title.rendered;
         copy.querySelector(".artimg").src = art.image_of_artist.guid;
         $('.artists').slick('slickAdd', copy);
+
     }
 }
 
@@ -526,10 +548,26 @@ function showSingleGallery(gallery) {
 
 }
 
-function alphabetClick(char){
+function alphabetClick(char) {
     //console.log(char.textContent);
     $('.artists').slick('slickRemove', null, null, true);
     fetchArtistData(char.textContent);
+}
+
+function generateAlphabet() {
+    var alphabets = [];
+    var start = 'A'.charCodeAt(0);
+    var last = 'Z'.charCodeAt(0);
+    for (var i = start; i <= last; ++i) {
+        console.log(String.fromCharCode(i));
+        const at = document.querySelector("#alphabet-template").content;
+        var copy = at.cloneNode(true);
+        copy.querySelector(".alphabet-other").textContent = String.fromCharCode(i);
+
+        document.querySelector(".alphabet").appendChild(copy);
+    }
+
+    console.log(alphabets.join(''));
 }
 
 /*-------GO TO TOP BTN------------------------------*/

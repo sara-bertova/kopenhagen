@@ -328,7 +328,7 @@ img {
 .alphabet > p:hover{
     color: var(--tex-color);
 }
-.aplhabet-selected{
+.alphabet-selected{
     color: var(--text-color);
 }
 .alphabet-other{

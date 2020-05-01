@@ -546,6 +546,15 @@ footer h4 {
 
     text-align: end;
 }
+.single-artist-event{
+    text-decoration: none;
+    color: var(--yellow-color);
+    transition: .5s;
+}
+.single-artist-event:hover{
+    text-decoration: underline;
+    color: var(--text-color);
+}
 
 .short-description-holder {
     display: none;

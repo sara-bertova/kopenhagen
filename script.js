@@ -402,6 +402,7 @@ function showSingleArt(art) {
         copy.querySelector("#artist-name").textContent = art.title.rendered;
         copy.querySelector(".single-artist-event-date").textContent = art.date_of_event;
         copy.querySelector(".single-artist-event").textContent = art.name_of_event;
+        copy.querySelector(".single-artist-event").href = art.link_to_event;
 
         if (art.short_description) {
             copy.querySelector(".short-description-holder").style.display = "inline";

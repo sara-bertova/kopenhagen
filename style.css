@@ -305,6 +305,32 @@ img {
     color: var(--red-color);
 }
 
+.alphabet{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+}
+.alphabet > p{
+    text-align: center;
+    margin-right: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.alphabet > p:hover{
+    color: var(--tex-color);
+}
+.aplhabet-selected{
+    color: var(--text-color);
+}
+.alphabet-other{
+    color: white;
+}
+
 #event {
     text-align: left;
 }
@@ -366,7 +392,6 @@ h2:after {
     margin: 0 20px 0 0;
     flex: 1 0 20px;
 }
-
 h2:after {
     margin: 0 0 0 20px;
 }

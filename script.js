@@ -555,15 +555,13 @@ function alphabetClick(char) {
 }
 
 function generateAlphabet() {
-
-    if (document.querySelector("#alphabet-template")) {
-        var alphabets = [];
+    const at = document.querySelector("#alphabet-template");
+    if (at) {
         var start = 'A'.charCodeAt(0);
         var last = 'Z'.charCodeAt(0);
         for (var i = start; i <= last; ++i) {
             //console.log(String.fromCharCode(i));
-            const at = document.querySelector("#alphabet-template").content;
-            var copy = at.cloneNode(true);
+            var copy = at.content.cloneNode(true);
             copy.querySelector(".alphabet-other").textContent = String.fromCharCode(i);
 
             document.querySelector(".alphabet").appendChild(copy);

@@ -170,22 +170,28 @@ nav a {
     transition: .5s;
 }
 
-nav a:hover, #event a.web:hover {
+nav a:hover {
     color: var(--red-color);
 }
 
-#event a.web:hover {
+#event a.web{
+    transition: .5s;
+    text-decoration: none;
+}
+
+#event a.web span{
+    transition: .5s;
+}
+
+#event a.web span:hover{
     color: var(--yellow-color);
+
 }
 
 .nav-selected{
     color: var(--red-color);
 }
 
-
-#event a.web{
-    transition: .5s;
-}
 
 /*AUTOMATIC SLIDESHOW*/
 * {
@@ -357,6 +363,11 @@ img {
     font-weight: normal;
 }
 
+#event p.longDes{
+    column-count: 2;
+    column-gap: 50px;
+}
+
 #event p.longDes,
 #event p.quote {
     padding-top: 20px;
@@ -371,14 +382,13 @@ img {
     font-size: 28px;
     text-align: center;
     line-height: 30px;
+    padding: 5px 20px;
 }
 
 #event img.evimg {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     display: block;
-    margin-top: 20px;
+    margin: 20px auto;
 }
 
 #event img.gallogo {
@@ -531,6 +541,17 @@ footer {
     margin-bottom: 30px;
 }
 
+.contact-icons-event {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    padding-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: flex-end;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
 .contact-icon{
     transition: 0.5s ease;
     cursor: pointer;
@@ -654,6 +675,12 @@ footer h4 {
     margin-right: auto;
 }
 
+/*#event a.web{
+    padding: 0;
+    margin: 0;
+    padding-left: 257px;
+}*/
+
 .about-event-holder {
     display: none;
 }
@@ -670,6 +697,10 @@ footer h4 {
 
 #event p span {
     padding-left: 25px;
+}
+
+#event a.web{
+    padding: 0;
 }
 
 .single-art-about-heading {
@@ -714,9 +745,10 @@ footer h4 {
     margin-right: auto;
 }
 
-.modal-btn{
+.modal-btn, .cross{
     cursor: pointer;
 }
+
 
 
 /*SLIDER - price, filter*/

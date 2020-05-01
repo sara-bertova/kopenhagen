@@ -95,8 +95,14 @@ if (document.querySelector(".slideshow-container")) {
 //FILTER
 const modal = document.querySelector(".modal-background");
 const modal_btn = document.querySelector(".modal-btn");
+const cross = document.querySelector(".cross");
 if (modal_btn) {
     modal_btn.addEventListener("click", () => {
+        modal.classList.add("hide");
+    });
+}
+if (cross) {
+    cross.addEventListener("click", () => {
         modal.classList.add("hide");
     });
 }
@@ -306,7 +312,8 @@ function showSingleEvent(ev) {
         copy.querySelector(".oh span").textContent = ev.opening_hours;
         copy.querySelector(".e-mail span").textContent = ev.email;
         copy.querySelector(".phone span").textContent = ev.phone;
-        copy.querySelector(".web").textContent = ev.web;
+        copy.querySelector(".web span").textContent = ev.web;
+        /*copy.querySelector(".website span").textContent = ev.web;*/
         copy.querySelector(".web").href = ev.web;
         copy.querySelector(".evimg").src = ev.image.guid;
         copy.querySelector(".gallogo").src = ev.logo.guid;

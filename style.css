@@ -174,10 +174,6 @@ nav a:hover, #event a.web:hover {
     color: var(--red-color);
 }
 
-.nav-selected{
-    color: var(--red-color);
-}
-
 #event a.web{
     transition: .5s;
 }
@@ -309,32 +305,6 @@ img {
     color: var(--red-color);
 }
 
-.alphabet{
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 30px));
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    justify-content: center;
-}
-.alphabet > p{
-    text-align: center;
-    margin-right: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.alphabet > p:hover{
-    color: var(--tex-color);
-}
-.alphabet-selected{
-    color: var(--text-color);
-}
-.alphabet-other{
-    color: white;
-}
-
 #event {
     text-align: left;
 }
@@ -396,6 +366,7 @@ h2:after {
     margin: 0 20px 0 0;
     flex: 1 0 20px;
 }
+
 h2:after {
     margin: 0 0 0 20px;
 }
@@ -574,15 +545,6 @@ footer h4 {
     margin: 0;
 
     text-align: end;
-}
-.single-artist-event{
-    text-decoration: none;
-    color: var(--yellow-color);
-    transition: .5s;
-}
-.single-artist-event:hover{
-    text-decoration: underline;
-    color: var(--text-color);
 }
 
 .short-description-holder {
@@ -858,7 +820,7 @@ main#contact ul{
     }
 }
 
-/***************GALLERY**************/
+/***************GALLERY&SUBGALLERY**************/
 
 .gal-name{
     color: var(--light-blue);
@@ -898,9 +860,17 @@ main#contact ul{
     column-gap:0px;
     line-height: 0;
 }
+.sub-pic-gallery{
+    column-count:2;
+    column-gap:0;
+    line-height: 0;
+}
 .gallery{
     position: relative;
 
+}
+sub-pic-gallery img{
+    position: relative;
 }
 .pic-gallery{
     opacity: 0.4;
@@ -920,6 +890,11 @@ main#contact ul{
     width: 100%;
     height: auto;
 }
+.sub-gallery img{
+    width: 100%;
+    height: auto;
+}
+
 .event-date{
     padding-top: 5vmin;
     padding-bottom: 5vmin;
@@ -929,6 +904,9 @@ main#contact ul{
     .event-date{
     column-count:1;
 }
+   .sub-pic-gallery{
+       column-count:1;
+    }
 }
 @media only screen and (min-width:601px) and (max-width: 800px) {
     .event-date{
@@ -945,3 +923,4 @@ main#contact ul{
     column-count:4;
 }
 }
+

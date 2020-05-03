@@ -1,34 +1,3 @@
-/*//NAV MENU
-fetch("http://rasbery.eu/kph/wp-json/wp/v2/categories?parent=13&orderby=id")
-    .then(function (response) {
-        return response.json()
-    })
-    .then(function (data) {
-        handleData(data)
-    })
-
-function handleData(jsonData) {
-    jsonData.reverse();
-    jsonData.forEach(showNav)
-
-}
-
-function showNav(nav) {
-    console.log(nav.name)
-
-    const cat = document.createElement("a");
-    cat.textContent = nav.name;
-
-
-    if (nav.name == "Contact") {
-        cat.href = "contact.html"
-    } else {
-        cat.href = "category.html?cat_id=" + nav.id;
-    }
-
-    document.querySelector(".navm").appendChild(cat);
-}*/
-
 //AUTOMATIC SLIDESHOW - make it dynamic
 if (document.querySelector(".slideshow-container")) {
     fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?per_page=4&orderby=date")
@@ -44,7 +13,6 @@ if (document.querySelector(".slideshow-container")) {
     }
 
     function createEvents(oneEvent) {
-        console.log(oneEvent)
         const div = document.createElement("div");
         div.classList.add("mySlides");
         div.classList.add("fade");
@@ -107,11 +75,6 @@ if (cross) {
     });
 }
 
-/*document.querySelector(".filter-btn").addEventListener("click", showFilter);
-function showFilter(data) {
-    modal.classList.remove("hide");
-}*/
-
 //DYNAMIC MONTHS IN CALENDAR, EVENTS ACCORDING TO MONTHS
 if (document.querySelector("#calendar")) {
     fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/categories?per_page=12&parent=26&orderby=id&order=desc")
@@ -127,7 +90,6 @@ if (document.querySelector("#calendar")) {
     }
 
     function createMonths(oneMon) {
-        console.log(oneMon)
         const section = document.createElement("section");
         const name = oneMon.name;
         section.id = name;
@@ -153,7 +115,6 @@ if (document.querySelector("#calendar")) {
         const eventSection = document.createElement("section");
         eventSection.class = "artguide" + oneMon.name;
         eventSection.classList.add("cal-slider");
-        console.log(eventSection.class);
 
         section.appendChild(eventSection);
 
@@ -185,8 +146,6 @@ if (document.querySelector("#calendar")) {
 
 
         const month_id = oneMon.id;
-        /*const link = "http://www.rasbery.eu/kph/wp-json/wp/v2/event?_embed&categories=" + month_id;
-        console.log(link)*/
         fetch("http://www.rasbery.eu/kph/wp-json/wp/v2/event?_embed&categories=" + month_id)
             .then(function (response) {
                 return response.json()
@@ -200,45 +159,25 @@ if (document.querySelector("#calendar")) {
         }
 
         function showMonthEvents(me) {
-            /*console.log(`#${month_id}`)*/
-            console.log(month_id);
 
             const template = document.querySelector("#AllEvents").content;
             const clone = template.cloneNode(true);
 
-            /*clone.querySelector(".eventImage").src = me.image.guid;*/
             clone.querySelector(".eventImage").src = me.slider_image.guid;
             clone.querySelector("h3").textContent = me.title.rendered;
-            /*clone.querySelector(".location").textContent = `${me.gallery}` + ", " + `${me.address}`;*/
             clone.querySelector(".location").textContent = me.gallery;
             clone.querySelector(".date").textContent = me.date_of_event;
             clone.querySelector(".artistev").textContent = me.artist;
             clone.querySelector(".type").textContent = me.type_of_event;
-            /*clone.querySelector(".excerpt").innerHTML = me.excerpt.rendered;*/
             const event_link = clone.querySelector(".read-more-btn");
             if (event_link) {
                 event_link.href += me.id;
             }
 
-            /*document.querySelector(`#${name}`).appendChild(clone);*/
-            $(eventSection).slick('slickAdd', clone);
-
-
+            $(eventSection).slick('slickAdd', clone)
         }
     }
-
 }
-
-/*//Calendar in the filter
-const calendar = document.querySelector(".input");
-calendar.addEventListener("click", () => {
-    calendar.classList.add("hide");
-});
-
-document.querySelector(".when").addEventListener("click", showCalendar);
-function showCalendar(data) {
-    calendar.classList.remove("hide");
-}*/
 
 //ADD EVENTS TO CALENDAR
 const urlParams = new URLSearchParams(window.location.search);
@@ -268,22 +207,6 @@ function showData(jsonData) {
 
 
 function showEvent(event) {
-    /*console.log(event)
-    const template = document.querySelector("#AllEvents").content;
-    const clone = template.cloneNode(true);
-
-    clone.querySelector(".eventImage").src = event.image.guid;
-    clone.querySelector("h3").textContent = event.title.rendered;
-    clone.querySelector(".location").textContent = `${event.gallery}` + ", " + `${event.address}`;
-    clone.querySelector(".date").textContent = event.date_of_event;
-    clone.querySelector(".artistev").textContent = event.artist;
-    clone.querySelector(".type").textContent = event.type_of_event;
-    clone.querySelector(".excerpt").innerHTML = event.excerpt.rendered;
-    const event_link = clone.querySelector(".read-more-btn-events");
-    if (event_link) {
-        event_link.href += event.id;
-    }
-    document.querySelector("#calendar").appendChild(clone);*/
 
     if (document.querySelector("#ddartists")) {
         const dropdown_location = document.createElement("option");
@@ -307,13 +230,11 @@ function showSingleEvent(ev) {
         copy.querySelector("h2").textContent = `${ev.artist}` + " - " + `${ev.title.rendered}`;
         copy.querySelector(".date span").textContent = ev.date_of_event;
         copy.querySelector(".longDes").textContent = ev.long_description;
-        /*copy.querySelector(".longDes").textContent = ev.long_description.split("\n");*/
         copy.querySelector(".quote").textContent = ev.quote;
         copy.querySelector(".oh span").textContent = ev.opening_hours;
         copy.querySelector(".e-mail span").textContent = ev.email;
         copy.querySelector(".phone span").textContent = ev.phone;
         copy.querySelector(".web span mark").textContent = ev.web;
-        /*copy.querySelector(".website span").textContent = ev.web;*/
         copy.querySelector(".web").href = ev.web;
         copy.querySelector(".evimg").src = ev.image.guid;
         copy.querySelector(".gallogo").src = ev.logo.guid;
@@ -356,8 +277,7 @@ function showSingleEvent(ev) {
 }
 
 
-//Artists slider
-/*const urlParams = new URLSearchParams(window.location.search);*/
+//ARTISTS SLIDER
 const the_artist_id = urlParams.get("artist_id");
 
 if (the_artist_id) {
@@ -398,9 +318,7 @@ function markSelectedAlphabet(alphabet) {
                 adiv[i].classList.remove("alphabet-selected");
             }
         }
-
     }
-
 }
 
 function handleArtistsData(jsonData, artistAlphabet) {
@@ -484,7 +402,7 @@ function showSingleArt(art) {
     }
 }
 
-//Gallery
+//GALLERY
 const the_gallery_id = urlParams.get("gallery_id");
 
 if (the_gallery_id) {
@@ -510,7 +428,6 @@ if (the_gallery_id) {
 
 function handleGalleryData(jsonData) {
     jsonData.reverse();
-    console.log(jsonData);
     jsonData.forEach(showGal);
 }
 
@@ -554,11 +471,9 @@ function showSingleGallery(gallery) {
 
         document.querySelector(".singleGallery").appendChild(copy);
     }
-
 }
 
 function alphabetClick(char) {
-    //console.log(char.textContent);
     $('.artists').slick('slickRemove', null, null, true);
     fetchArtistData(char.textContent);
 }
@@ -569,7 +484,6 @@ function generateAlphabet() {
         var start = 'A'.charCodeAt(0);
         var last = 'Z'.charCodeAt(0);
         for (var i = start; i <= last; ++i) {
-            //console.log(String.fromCharCode(i));
             var copy = at.content.cloneNode(true);
             copy.querySelector(".alphabet-other").textContent = String.fromCharCode(i);
 
@@ -594,25 +508,8 @@ window.onscroll = function () {
     scrollFunction()
 };
 
-
-/*---GO TO TOP BTN-------------------------------------*/
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() { // eslint-disable-line no-unused-vars
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
-
-/*
-
-//CURSOR
-const cursor = document.querySelector(".cursor")
-
-//everytime mouse moves, adjust style attribute
-//change cursor position to mouse position based on mouse move
-//pageY and pageX return the locetion of cursor on the page
-document.addEventListener("mousemove", e => {
-    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
-})
-*/

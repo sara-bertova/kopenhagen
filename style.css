@@ -12,13 +12,10 @@
 html {
     scroll-behavior: smooth;
 }
-
 body {
     background-color: var(--bg-color);
     font-family: var(--primary-font);
     color: var(--text-color);
-
-    /*cursor: none;*/
 }
 
 main {
@@ -29,20 +26,7 @@ ul {
     list-style: none;
 }
 
-.cursor {
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--text-color);
-    border-radius: 50%;
-    position: absolute;
-    transition-duration: 200ms;
-    transition-timing-function: ease-out;
-    animation: cursorAnim .5s infinite alternate;
-    z-index: 100;
-}
-
 #topBtn {
-    /*display: none;*/
     background: url(icons/btn-16.png);
 
     position: fixed;
@@ -58,7 +42,6 @@ ul {
     margin: 30px 0px;
     transition: .5s;
 }
-
 #topBtn:hover {
     background: url(icons/btn-17.png);
 }
@@ -81,63 +64,54 @@ header {
         logo-fill 1s ease forwards 2.4s;
 
 }
-
 #logo path:nth-child(3) {
     stroke-dasharray: 185;
     stroke-dashoffset: 185;
     animation: line-anim 2s ease forwards .9s,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(4) {
     stroke-dasharray: 185;
     stroke-dashoffset: 185;
     animation: line-anim 2s ease forwards .6s,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(5) {
     stroke-dasharray: 237;
     stroke-dashoffset: 237;
     animation: line-anim 2s ease forwards .9s,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(6) {
     stroke-dasharray: 285;
     stroke-dashoffset: 285;
     animation: line-anim 2s ease forwards .3s,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(7) {
     stroke-dasharray: 275;
     stroke-dashoffset: 275;
     animation: line-anim 2s ease forwards .6s,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(8) {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
     animation: line-anim 2s ease forwards,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(9) {
     stroke-dasharray: 265;
     stroke-dashoffset: 265;
     animation: line-anim 2s ease forwards 1.3s,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(10) {
     stroke-dasharray: 237;
     stroke-dashoffset: 237;
     animation: line-anim 2s ease forwards,
         logo-fill 1s ease forwards 2.4s;
 }
-
 #logo path:nth-child(11) {
     stroke-dasharray: 285;
     stroke-dashoffset: 285;
@@ -150,7 +124,6 @@ header {
         stroke-dashoffset: 0;
     }
 }
-
 @keyframes logo-fill {
     from {
         fill: transparent;
@@ -178,11 +151,9 @@ nav a:hover {
     transition: .5s;
     text-decoration: none;
 }
-
 #event a.web span mark{
     transition: .5s;
 }
-
 #event a.web span mark:hover{
     color: var(--yellow-color);
 
@@ -292,8 +263,6 @@ img {
     }
 }
 
-
-
 .yellow-heading,
 .blue-heading,
 .red-heading {
@@ -314,7 +283,6 @@ img {
 
 .blue-heading {
     color: var(--light-blue);
-    /*margin-top: 100px;*/
 }
 
 .red-heading {
@@ -337,6 +305,7 @@ img {
     font-size: 25px;
     font-weight: bold;
     cursor: pointer;
+    transition: .2s;
 }
 .alphabet > p:hover{
     color: var(--tex-color);
@@ -363,35 +332,25 @@ img {
     color: var(--text-color);
     font-weight: normal;
 }
-
 #event p.longDes{
     column-count: 3;
     column-gap: 50px;
 }
-
 #event p.longDes,
 #event p.quote {
     padding-top: 20px;
 }
-
-/*#event p.longDes{
-    column-count: 2;
-    text-align: left;
-}*/
-
 #event p.quote {
     font-size: 28px;
     text-align: center;
     line-height: 30px;
     padding: 5px 20px;
 }
-
 #event img.evimg {
     width: 80%;
     display: block;
     margin: 20px auto;
 }
-
 #event img.gallogo {
     width: 100px;
     margin-left: auto;
@@ -433,7 +392,6 @@ mark {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
-
 .hole {
     width: 350px;
     height: 350px;
@@ -447,7 +405,6 @@ mark {
     margin-right: 200px;
 
 }
-
 .sign-up-section h3 {
     font-size: 40px;
     grid-column: 1 / 3;
@@ -460,7 +417,6 @@ mark {
     align-self: flex-end;
 
 }
-
 .sign-up-section h4 {
     font-size: 30px;
     grid-column: 1 / 3;
@@ -471,7 +427,6 @@ mark {
     margin-right: auto;
     text-align: end;
 }
-
 .sign-up-section-submit-email {
     grid-column: 1 / 3;
     grid-row: 3;
@@ -491,7 +446,6 @@ mark {
 
     font-family: var(--primary-font);
 }
-
 .submitBtn {
     background: var(--yellow-color);
     color: white;
@@ -506,12 +460,6 @@ mark {
     cursor: pointer;
 }
 
-/*.ads-container{
-    width: 100%;
-    background: white;
-    padding: 20px;
-
-}*/
 .ads-img {
     display: block;
     width: 35%;
@@ -524,7 +472,6 @@ mark {
     margin-left: auto;
     margin-right: auto;
 }
-
 footer {
     height: 160px;
     display: grid;
@@ -532,7 +479,6 @@ footer {
     color: var(--light-blue);
 
 }
-
 .contact-icons {
     grid-column: 1;
     grid-row: 1 / 4;
@@ -541,7 +487,6 @@ footer {
     align-self: flex-end;
     margin-bottom: 30px;
 }
-
 .contact-icons-event {
     grid-column: 1;
     grid-row: 1 / 4;
@@ -552,7 +497,6 @@ footer {
     margin-bottom: 30px;
     margin-top: 10px;
 }
-
 .contact-icon{
     transition: 0.5s ease;
     cursor: pointer;
@@ -560,6 +504,7 @@ footer {
 .contact-icon:hover {
     transform: translate(0,-7px);
 }
+
 footer h3 {
     font-size: 25px;
     grid-column: 2;
@@ -568,7 +513,6 @@ footer h3 {
     margin-right: 200px;
     margin-bottom: 0;
 }
-
 footer h4 {
     font-size: 20px;
     grid-column: 2;
@@ -579,7 +523,6 @@ footer h4 {
     margin-bottom: 0;
 
 }
-
 .footer-submit-email {
     grid-column: 2;
     grid-row: 3;
@@ -620,7 +563,6 @@ footer h4 {
     text-align: center;
     align-items: center;
 }
-
 .short-description {
     font-size: 20px;
     line-height: 25px;
@@ -648,13 +590,11 @@ footer h4 {
     cursor: pointer;
     transition: .5s;
 }
-
 .singleartist-readmore-btn:hover {
     border: 2px solid var(--yellow-color);
     background: transparent;
     color: var(--yellow-color);
 }
-
 .readmore-content {
     display: none;
 }
@@ -676,12 +616,6 @@ footer h4 {
     margin-right: auto;
 }
 
-/*#event a.web{
-    padding: 0;
-    margin: 0;
-    padding-left: 257px;
-}*/
-
 .about-event-holder {
     display: none;
 }
@@ -695,11 +629,9 @@ footer h4 {
     padding: 0;
     margin: 5px auto 0 auto;
 }
-
 #event p span {
     padding-left: 25px;
 }
-
 #event a.web{
     padding: 0;
 }
@@ -718,7 +650,6 @@ footer h4 {
 .show {
     display: block;
 }
-
 .hide {
     display: none;
 }
@@ -733,7 +664,6 @@ footer h4 {
     background-color: rgba(0, 0, 0, 0.7);
     overflow: auto;
 }
-
 .modal-content {
     background-color: #ffffff;
     margin: 1em;
@@ -745,12 +675,9 @@ footer h4 {
     margin-left: auto;
     margin-right: auto;
 }
-
 .modal-btn, .cross{
     cursor: pointer;
 }
-
-
 
 /*SLIDER - price, filter*/
 .slidecon {
@@ -768,11 +695,9 @@ footer h4 {
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
-
 .priceslider:hover {
     opacity: 1;
 }
-
 .priceslider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -781,7 +706,6 @@ footer h4 {
     background: var(--text-color);
     cursor: pointer;
 }
-
 .priceslider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -799,7 +723,6 @@ main#contact {
 .first{
     grid-column: 1;
 }
-
 .first img{
     margin-top: 46px;
 }
@@ -808,7 +731,6 @@ main#contact {
     margin-bottom: 10px;
     margin-top: 30px;
 }
-
 .second{
     grid-column: 2;
 }
@@ -818,15 +740,11 @@ mark{
     font-weight: bold;
     color: var(--text-color);
 }
-
 main#contact ul{
     padding:0;
 }
 
-
-
 /*GALLERY&SUBGALLERY*/
-
 .gal-name{
     color: var(--light-blue);
     font-size: 3vmin;
@@ -877,10 +795,10 @@ main#contact ul{
 sub-pic-gallery img{
     position: relative;
 }
+
 .pic-gallery{
     opacity: 0.4;
 }
-
 .pic-gallery:hover{
     opacity: 1;
 }

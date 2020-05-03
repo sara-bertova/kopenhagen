@@ -448,10 +448,8 @@ function showGal(gallery) {
 
     copy.querySelector("#date").textContent = gallery.date_of_event;
     copy.querySelector("#name").textContent = gallery.title.rendered;
+    copy.querySelector("#imageName").src = gallery.images[gallery.images.length-1].guid;
 
-    for (i = 0; i < gallery.images.length; i++) {
-        copy.querySelector("#imageName").src = gallery.images[i].guid;
-    }
     document.querySelector(".event-date").appendChild(copy);
 }
 

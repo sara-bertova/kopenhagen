@@ -450,7 +450,7 @@ function showGal(gallery) {
     copy.querySelector("#name").textContent = gallery.title.rendered;
     copy.querySelector("#imageName").src = gallery.images[gallery.images.length-1].guid;
 
-    document.querySelector(".event-date").appendChild(copy);
+    document.querySelector(".gallery-container").appendChild(copy);
 }
 
 function showSingleGallery(gallery) {

@@ -892,6 +892,7 @@ sub-pic-gallery img{
         column-count: 2;
     }
 
+
 }
 @media only screen and (max-width: 800px) {
     #logo {
@@ -942,6 +943,9 @@ sub-pic-gallery img{
     }
     #event p.longDes{
         column-count: 1;
+    }
+    .ads-img {
+        width: 80%;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -1011,6 +1015,7 @@ sub-pic-gallery img{
         padding:0;
         line-height: 25px;
     }
+
 
 }
 @media only screen and (max-width: 400px) {

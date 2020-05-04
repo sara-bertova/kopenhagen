@@ -322,9 +322,11 @@ h2:after {
     text-align: left;
 }
 
-#event p {
+main#event p {
     color: var(--light-blue);
     font-weight: bold;
+    text-align: left;
+    padding-bottom: 2px;
 }
 
 #event p span,
@@ -360,6 +362,9 @@ h2:after {
     margin-top: 20px;
 }
 
+#event h3{
+    text-align: center;
+}
 h1 {
     color: var(--yellow-color);
     text-align: right;
@@ -883,6 +888,9 @@ sub-pic-gallery img{
     nav a {
         margin-right: 50px;
     }
+    #event p.longDes{
+        column-count: 2;
+    }
 
 }
 @media only screen and (max-width: 800px) {
@@ -932,6 +940,9 @@ sub-pic-gallery img{
     .second img{
         width: 100%;
     }
+    #event p.longDes{
+        column-count: 1;
+    }
 }
 @media only screen and (max-width: 600px) {
     .sign-up-section {
@@ -974,6 +985,7 @@ sub-pic-gallery img{
         margin-left: auto;
         grid-row: 1;
         grid-column: 1;
+        text-align: center;
     }
     footer h4 {
         margin-right: auto;
@@ -994,6 +1006,12 @@ sub-pic-gallery img{
     .sub-pic-gallery{
        column-count:1;
     }
+    #event p.quote{
+        font-size: 23px;
+        padding:0;
+        line-height: 25px;
+    }
+
 }
 @media only screen and (max-width: 400px) {
     .text{
@@ -1014,6 +1032,15 @@ sub-pic-gallery img{
         position: absolute;
         bottom: 30px;
         left: 10px;
+    }
+    #event p.quote{
+        font-size: 18px;
+        padding:0;
+        line-height: 20px;
+    }
+    main#event p{
+        font-size: 18px;
+        line-height: 20px;
     }
 
 }

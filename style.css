@@ -750,12 +750,12 @@ main#contact {
     margin-top: 46px;
 }
 
+.second{
+    grid-column: 2;
+}
 .second img{
     margin-bottom: 10px;
     margin-top: 30px;
-}
-.second{
-    grid-column: 2;
 }
 
 mark{
@@ -856,6 +856,22 @@ sub-pic-gallery img{
     height: auto;
 }
 
+@media only screen and (max-width: 1200px){
+     main#contact{
+        grid-template-columns: 1fr;
+         margin-left: 0;
+    }
+    .first{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .second{
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+}
 @media only screen and (max-width: 1000px) {
     .gallery-container{
         column-count:3;
@@ -867,6 +883,7 @@ sub-pic-gallery img{
     nav a {
         margin-right: 50px;
     }
+
 }
 @media only screen and (max-width: 800px) {
     #logo {
@@ -907,6 +924,13 @@ sub-pic-gallery img{
 
     .gallery-container{
         column-count:2;
+    }
+
+     .first img{
+        width: 100%;
+    }
+    .second img{
+        width: 100%;
     }
 }
 @media only screen and (max-width: 600px) {

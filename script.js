@@ -328,15 +328,21 @@ function markSelectedAlphabet(alphabet) {
 }
 
 function handleArtistsData(jsonData, artistAlphabet) {
+    var showItemCount = 0;
     jsonData.reverse();
     jsonData.forEach(function (item, index) {
-        showArt(item, artistAlphabet);
+        showItemCount = showItemCount + showArt(item, artistAlphabet);
     });
+    if(showItemCount){
+        document.querySelector(".noartistdata").style.display = "none";
+    }else{
+        document.querySelector(".noartistdata").style.display = "block";
+    }
 }
 
 function showArt(art, artistAlphabet) {
     if (art.alphabet != artistAlphabet) {
-        return;
+        return 0;
     }
 
     if (document.querySelector("#slider-template")) {
@@ -353,6 +359,7 @@ function showArt(art, artistAlphabet) {
         copy.querySelector(".artimg").src = art.image_of_artist.guid;
         $('.artists').slick('slickAdd', copy);
 
+        return 1;
     }
 }
 

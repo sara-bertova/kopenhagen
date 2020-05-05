@@ -406,6 +406,13 @@ mark {
     background-color: var(--bg-color);
 }
 
+.noartistdata{
+    display: none;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
 /*SIGN UP SECTION*/
 .sign-up-section {
     margin: 50px 0;

@@ -942,7 +942,7 @@ sub-pic-gallery img{
         width: 100%;
     }
     #event p.longDes{
-        column-count: 1;
+        column-count: 2;
     }
     .ads-img {
         width: 80%;
@@ -1015,6 +1015,9 @@ sub-pic-gallery img{
         padding:0;
         line-height: 25px;
     }
+    #event p.longDes{
+        column-count: 1;
+    }
 
 
 }
@@ -1047,7 +1050,12 @@ sub-pic-gallery img{
         font-size: 18px;
         line-height: 20px;
     }
-
+    .blue-heading{
+        width: 100%;
+    }
+    #event p span{
+        padding-left: 7px;
+    }
 }
 
 

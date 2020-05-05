@@ -1126,7 +1126,7 @@ sub-pic-gallery img {
     .modal-content {
         grid-template-columns: 1fr 1fr;
         column-gap: 25px;
-        height: 70%;
+        height: 80%;
         margin-left: 0;
     }
     .modal-btn, .cross {

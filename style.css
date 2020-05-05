@@ -449,10 +449,10 @@ mark {
     letter-spacing: 2px;
     width: 100px;
     height: 40px;
-
     outline: none;
     border: none;
     cursor: pointer;
+    transition: .5s;
 }
 
 .ads-img {
@@ -586,7 +586,7 @@ footer h4 {
     cursor: pointer;
     transition: .5s;
 }
-.singleartist-readmore-btn:hover, .modal-btn:hover {
+.singleartist-readmore-btn:hover, .modal-btn:hover, .submitBtn:hover {
     border: 2px solid var(--yellow-color);
     background: transparent;
     color: var(--yellow-color);

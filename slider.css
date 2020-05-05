@@ -78,10 +78,10 @@ body {
 /*CALENDAR SLIDER*/
 .calendar-item{
     background: #D2E2F4;
-    height: 450px;
+    height: 425px;
 }
 .calendar-item-top{
-    height: 200px;
+    height: 175px;
     padding-top: 15%;
 }
 .calendar-item-bottom{
@@ -126,3 +126,13 @@ div.calendar-item-top{
 .slick-current {
     opacity: 1;
 }
+
+
+
+@media only screen and (max-width: 400px){
+    .calendar-item-top{
+        height: 110px;
+    }
+    .calendar-item{
+        height: 350px;
+    }

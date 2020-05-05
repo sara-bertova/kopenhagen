@@ -318,10 +318,6 @@ h2:after {
     color: white;
 }
 
-#event {
-    text-align: left;
-}
-
 main#event p {
     color: var(--light-blue);
     font-weight: bold;
@@ -338,6 +334,7 @@ main#event p {
 #event p.longDes{
     column-count: 3;
     column-gap: 50px;
+    text-align: justify;
 }
 #event p.longDes,
 #event p.quote {
@@ -943,6 +940,7 @@ sub-pic-gallery img{
     }
     #event p.longDes{
         column-count: 2;
+        column-gap: 30px;
     }
     .ads-img {
         width: 80%;
@@ -1012,14 +1010,19 @@ sub-pic-gallery img{
     }
     #event p.quote{
         font-size: 23px;
-        padding:0;
         line-height: 25px;
     }
     #event p.longDes{
         column-count: 1;
     }
 
+    .short-description, p.about-artist, p.about-event, .blue-heading, .yellow-heading, .red-heading, main#event p.longDes, main#event p.quote{
+        width: 100%;
+    }
 
+    main#event p.longDes, main#event p.quote{
+        padding: 20px;
+    }
 }
 @media only screen and (max-width: 400px) {
     .text{
@@ -1046,16 +1049,16 @@ sub-pic-gallery img{
         padding:0;
         line-height: 20px;
     }
-    main#event p{
+    main#event p, .short-description, p.about-artist, p.about-event{
         font-size: 18px;
-        line-height: 20px;
-    }
-    .blue-heading{
-        width: 100%;
+        line-height: 23px;
     }
     #event p span{
         padding-left: 7px;
     }
+
+
+
 }
 
 

@@ -105,7 +105,7 @@ if (document.querySelector("#calendar")) {
         filter.classList.add("contact-icon");*/
         /*filter.classList.add("filter-btn");*/
 
-        document.querySelector(".contact-icon").addEventListener("click", showFilter);
+        document.querySelector(".filter").addEventListener("click", showFilter);
 
         function showFilter(data) {
             modal.classList.remove("hide");

@@ -533,14 +533,21 @@ footer {
     text-align: left;
 }
 
-.contact-icon {
+.contact-icon,
+.filter {
     transition: 0.5s ease;
     cursor: pointer;
-    margin-top: 12px;
 }
 
-.contact-icon:hover {
+.contact-icon:hover,
+.filter:hover {
     transform: translate(0, -7px);
+}
+
+.filter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer h3 {
@@ -733,11 +740,11 @@ footer h4 {
     cursor: pointer;
 }
 
-.first img.when{
+.first img.when {
     margin-top: 0;
 }
 
-.modal-content h2{
+.modal-content h2 {
     margin-bottom: 10px;
     margin-top: 25px;
 }
@@ -805,7 +812,7 @@ footer h4 {
     color: var(--text-color);
 }
 
-input[type="checkbox" i] {
+input[type="checkbox"i] {
     margin: 3px 0 0 20px;
     border: 1px solid var(--text-color);
     background-color: white;
@@ -835,7 +842,8 @@ main#contact {
     margin-top: 30px;
 }
 
-.museum, .building{
+.museum,
+.building {
     width: 70%;
 }
 
@@ -932,9 +940,11 @@ main#contact ul {
     line-height: 0;
     margin: 0 50px;
 }
-.sub-pic-gallery img{
+
+.sub-pic-gallery img {
     padding: 10px;
 }
+
 sub-pic-gallery img {
     position: relative;
 }
@@ -1140,7 +1150,8 @@ sub-pic-gallery img {
     .yellow-heading,
     .red-heading,
     main#event p.longDes,
-    main#event p.quote, .sub-name {
+    main#event p.quote,
+    .sub-name {
         width: 100%;
     }
 
@@ -1191,11 +1202,12 @@ sub-pic-gallery img {
         padding-left: 7px;
     }
 
-    .gallery-container, .sub-pic-gallery{
+    .gallery-container,
+    .sub-pic-gallery {
         margin: 0 10px;
     }
 
-    #event img.evimg{
+    #event img.evimg {
         width: 100%;
         padding: 20px;
         margin: 0;

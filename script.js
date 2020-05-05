@@ -228,7 +228,6 @@ function showSingleEvent(ev) {
         const single_event_template = document.querySelector("#single-event").content;
         var copy = single_event_template.cloneNode(true);
 
-        /*copy.querySelector("h2").textContent = `${ev.artist}` + ": " + `${ev.title.rendered}`;*/
         copy.querySelector("h2").textContent = ev.title.rendered;
         copy.querySelector("h3").textContent = ev.artist;
         copy.querySelector(".date span").textContent = ev.date_of_event;
@@ -295,7 +294,7 @@ if (the_artist_id) {
         .then(function (data) {
             showSingleArt(data)
         })
-} else if (document.querySelector(".alphabet")){
+} else if (document.querySelector(".alphabet")) {
     generateAlphabet();
     fetchArtistData("A");
 }
@@ -455,7 +454,7 @@ function showGal(gallery) {
 
     copy.querySelector("#date").textContent = gallery.date_of_event;
     copy.querySelector("#name").textContent = gallery.title.rendered;
-    copy.querySelector("#imageName").src = gallery.images[gallery.images.length-1].guid;
+    copy.querySelector("#imageName").src = gallery.images[gallery.images.length - 1].guid;
 
     document.querySelector(".gallery-container").appendChild(copy);
 }

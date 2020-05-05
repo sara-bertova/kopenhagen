@@ -547,7 +547,7 @@ footer {
 .filter {
     display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: 50px;
 }
 
 footer h3 {
@@ -706,7 +706,6 @@ footer h4 {
 .show {
     display: block;
 }
-
 .hide {
     display: none;
 }
@@ -721,31 +720,30 @@ footer h4 {
     background-color: rgba(0, 0, 0, 0.7);
     overflow: auto;
 }
-
 .modal-content {
     background-color: #ffffff;
     margin: 1em;
     padding: 2.5em;
+    width: 80%;
+    height: 50%;
+
+    border: 5px solid var(--yellow-color);
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr .5fr;
     column-gap: 25px;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.modal-btn,
-.cross {
+.modal-btn, .cross {
     cursor: pointer;
+    grid-column: 4;
 }
-
-.first img.when {
-    margin-top: 0;
-}
-
-.modal-content h2 {
-    margin-bottom: 10px;
-    margin-top: 25px;
+.cross{
+    justify-self: end;
 }
 
 .modal-btn {
@@ -759,11 +757,48 @@ footer h4 {
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 50px;
     cursor: pointer;
     transition: .5s;
-    justify-content: flex-end;
+    justify-self: center;
+    align-self: flex-end;
+
 }
+
+.filter-where{
+    grid-column: 1;
+    grid-row: 1;
+
+}
+
+.filter-who{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.filter-when{
+    grid-column: 3;
+    grid-row: 1;
+}
+.filter-when img {
+    margin-top: 0;
+}
+
+.filter-what{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.filter-howmuch{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.modal-heading {
+    margin-bottom: 10px;
+    margin-top: 25px;
+    font-size: 30px;
+}
+
 
 /*SLIDER - price, filter*/
 .slidecon {
@@ -772,25 +807,24 @@ footer h4 {
 
 .priceslider {
     -webkit-appearance: none;
-    width: 50%;
+    width: 100%;
     height: 20px;
     background: white;
-    border: 1px solid var(--text-color);
+    border: 3px solid var(--yellow-color);
+    border-radius: 10%;
     outline: none;
     opacity: 1;
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
-
 .priceslider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
-    background: var(--text-color);
+    background: var(--yellow-color);
     cursor: pointer;
 }
-
 .priceslider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -799,6 +833,7 @@ footer h4 {
 }
 
 /*FILTER - dropdowns, datepicker, checkboxes*/
+
 #location,
 #ddartists {
     cursor: pointer;
@@ -807,14 +842,21 @@ footer h4 {
 #location,
 #ddartists,
 .datepicker {
-    border: 1px solid var(--text-color);
+    border: none;
+    background: var(--bg-color);
     color: var(--text-color);
+    padding: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
 }
 
-input[type="checkbox"i] {
-    margin: 3px 0 0 20px;
+input[type="checkbox"] {
+    /*margin: 3px 0 0 20px;
     border: 1px solid var(--text-color);
-    background-color: white;
+    background-color: white;*/
+    outline: none;
+    cursor: pointer;
 }
 
 /*CONTACT PAGE*/
@@ -827,7 +869,6 @@ main#contact {
 .first {
     grid-column: 1;
 }
-
 .first img {
     margin-top: 46px;
 }
@@ -835,7 +876,6 @@ main#contact {
 .second {
     grid-column: 2;
 }
-
 .second img {
     margin-bottom: 10px;
     margin-top: 30px;
@@ -875,7 +915,6 @@ main#contact ul {
     margin-bottom: 15px;
     transition: .2s;
 }
-
 .pic-gallery:hover {
     opacity: 0.5;
 }
@@ -896,12 +935,10 @@ main#contact ul {
     margin-top: 10px;
     font-weight: bold;
 }
-
 .gal-name {
     font-size: 23px;
     margin-bottom: 0;
 }
-
 .gal-date {
     font-size: 2vmin;
 }
@@ -919,7 +956,6 @@ main#contact ul {
     margin-top: 70px;
     margin-bottom: 0;
 }
-
 .sub-date {
     display: flex;
     width: 60%;
@@ -939,11 +975,9 @@ main#contact ul {
     line-height: 0;
     margin: 0 50px;
 }
-
 .sub-pic-gallery img {
     padding: 10px;
 }
-
 sub-pic-gallery img {
     position: relative;
 }
@@ -952,7 +986,6 @@ sub-pic-gallery img {
     width: 100%;
     height: auto;
 }
-
 .sub-gallery img {
     width: 100%;
     height: auto;
@@ -968,14 +1001,38 @@ sub-pic-gallery img {
         grid-column: 1;
         grid-row: 1;
     }
-
     .second {
         grid-column: 1;
         grid-row: 2;
     }
 
-}
+    .modal-content {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 25px;
+    }
 
+    .modal-btn, .cross {
+        grid-column: 3;
+    }
+    .modal-btn{
+        grid-row: 3;
+    }
+
+    .filter-when{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .filter-what{
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .filter-howmuch{
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+
+}
 @media only screen and (max-width: 1000px) {
     .gallery-container {
         column-count: 3;
@@ -993,9 +1050,7 @@ sub-pic-gallery img {
         column-count: 2;
     }
 
-
 }
-
 @media only screen and (max-width: 800px) {
     #logo {
         margin-left: auto;
@@ -1003,12 +1058,12 @@ sub-pic-gallery img {
         margin-bottom: 20px;
         width: 100%;
     }
-
     nav {
         grid-row: 2;
         margin-left: auto;
         margin-right: auto;
     }
+
 
     .text,
     .eventArtist,
@@ -1060,14 +1115,44 @@ sub-pic-gallery img {
     .ads-img {
         width: 80%;
     }
-}
 
+    .modal-content {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 25px;
+        height: 70%;
+        margin-left: 0;
+    }
+    .modal-btn, .cross {
+        grid-column: 2;
+    }
+    .modal-btn{
+        grid-row: 5;
+    }
+    .cross{
+        grid-row: 1;
+    }
+    .filter-when{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .filter-what{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .filter-howmuch{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .filter-who{
+        grid-column: 1;
+        grid-row: 5;
+    }
+}
 @media only screen and (max-width: 600px) {
     .sign-up-section {
         grid-template-columns: 1fr;
         align-items: center;
     }
-
     .hole {
         width: 250px;
         height: 250px;
@@ -1075,7 +1160,6 @@ sub-pic-gallery img {
         margin-right: 0px;
 
     }
-
     .sign-up-section h3 {
         font-size: 35px;
         grid-column: 1;
@@ -1083,7 +1167,6 @@ sub-pic-gallery img {
         text-align: center;
 
     }
-
     .sign-up-section h4 {
         font-size: 20px;
         grid-column: 1;
@@ -1095,14 +1178,12 @@ sub-pic-gallery img {
     footer {
         grid-template-columns: 1fr;
     }
-
     .contact-icons {
         grid-column: 1;
         grid-row: 4;
         margin-bottom: 5px;
         margin-top: 10px;
     }
-
     footer h3 {
         margin-right: auto;
         margin-left: auto;
@@ -1110,7 +1191,6 @@ sub-pic-gallery img {
         grid-column: 1;
         text-align: center;
     }
-
     footer h4 {
         margin-right: auto;
         margin-left: auto;
@@ -1158,8 +1238,37 @@ sub-pic-gallery img {
     main#event p.quote {
         padding: 20px;
     }
-}
 
+    .modal-content {
+        grid-template-columns: 1fr;
+        column-gap: 25px;
+        height: 90%;
+    }
+
+    .modal-btn, .cross {
+        grid-column: 1;
+    }
+    .modal-btn{
+        grid-row: 6;
+    }
+
+    .filter-when{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .filter-what{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .filter-howmuch{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .filter-who{
+        grid-column: 1;
+        grid-row: 5;
+    }
+}
 @media only screen and (max-width: 400px) {
     .text {
         font-size: 20px;

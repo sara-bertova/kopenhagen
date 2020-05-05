@@ -104,30 +104,50 @@
     <div class="modal-background hide">
         <div class="modal-content">
             <img class="cross" src="icons/cross.png" alt="cross">
-            <div class="first">
-                <h2>Where?</h2>
+
+            <div class="filter-where">
+                <h3 class="modal-heading">Where?</h3>
                 <select id="location" name="location">
                 </select>
-                <h2>Who?</h2>
-                <select id="ddartists" name="ddartists">
-                </select>
-                <h2>When?</h2>
-                <input class="datepicker" type="date" name="datepicker">
-                <img class="when" src="icons/calendar.png" alt="calendar">
             </div>
 
-            <div class="second">
-                <h2>What?</h2>
+            <div class="filter-who">
+                <h3 class="modal-heading">Who?</h3>
+                <select id="ddartists" name="ddartists">
+                </select>
+            </div>
+
+            <div class="filter-when">
+                <h3 class="modal-heading">When?</h3>
+                <input class="datepicker" type="date" name="datepicker">
+                <!--<img class="when" src="icons/calendar.png" alt="calendar">-->
+            </div>
+
+            <div class="filter-what">
+                <h3 class="modal-heading">What?</h3>
                 <form action="checkboxes" method="post">
-                    <input type="checkbox" name="event-type1" value="vernissage" /> Vernissage
-                    <input type="checkbox" name="event-type2" value="art-exhibition" /> Art exhibition
-                    <input type="checkbox" name="event-type3" value="music" /> Music
+                    <div class="what-checkboxs">
+
+                        <input type="checkbox" class="what-checkbox" name="event-type1" value="vernissage">
+                        <lable for="eventtype1">Vernissage</lable>
+
+                        <input type="checkbox" class="what-checkbox" name="event-type2" value="art-exhibition">
+                        <lable for="eventtype2">Art exhibition</lable>
+
+                        <input type="checkbox" class="what-checkbox" name="event-type3" value="music">
+                        <lable for="eventtype3">Music</lable>
+
+                    </div>
                 </form>
-                <h2>How much?</h2>
+            </div>
+
+            <div class="filter-howmuch">
+                <h3 class="modal-heading">How much?</h3>
                 <div class="slidecon">
                     <input type="range" min="1" max="100" value="50" class="priceslider" id="myRange">
                 </div>
             </div>
+
             <button class="modal-btn">APPLY</button>
         </div>
     </div>

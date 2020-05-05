@@ -227,10 +227,11 @@ function showSingleEvent(ev) {
         const single_event_template = document.querySelector("#single-event").content;
         var copy = single_event_template.cloneNode(true);
 
-        copy.querySelector("h2").textContent = `${ev.artist}` + ": " + `${ev.title.rendered}`;
+        /*copy.querySelector("h2").textContent = `${ev.artist}` + ": " + `${ev.title.rendered}`;*/
+        copy.querySelector("h2").textContent = ev.title.rendered;
+        copy.querySelector("h3").textContent = ev.artist;
         copy.querySelector(".date span").textContent = ev.date_of_event;
         copy.querySelector(".longDes").textContent = ev.long_description;
-        copy.querySelector(".quote").textContent = ev.quote;
         copy.querySelector(".oh span").textContent = ev.opening_hours;
         copy.querySelector(".e-mail span").textContent = ev.email;
         copy.querySelector(".phone span").textContent = ev.phone;
@@ -240,6 +241,11 @@ function showSingleEvent(ev) {
         copy.querySelector(".gallogo").src = ev.logo.guid;
         copy.querySelector(".location span").textContent = `${ev.gallery}` + ", " + `${ev.address}`;
 
+        if (ev.quote) {
+            copy.querySelector(".quote").textContent = ev.quote;
+        } else {
+            copy.querySelector(".quote").style.display = "none";
+        }
 
         if (ev.price) {
             copy.querySelector(".price span").textContent = ev.price;

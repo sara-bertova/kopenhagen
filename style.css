@@ -291,6 +291,8 @@ img {
 
 .blue-heading {
     color: var(--light-blue);
+    margin-bottom: 0;
+    margin-top: 70px;
 }
 
 .red-heading {
@@ -390,7 +392,7 @@ main#event p {
 }
 
 #event h3 {
-    text-align: center;
+    color: var(--light-blue);
 }
 
 h1 {
@@ -528,11 +530,13 @@ footer {
     align-self: flex-end;
     margin-bottom: 30px;
     margin-top: 10px;
+    text-align: left;
 }
 
 .contact-icon {
     transition: 0.5s ease;
     cursor: pointer;
+    margin-top: 12px;
 }
 
 .contact-icon:hover {
@@ -831,6 +835,10 @@ main#contact {
     margin-top: 30px;
 }
 
+.museum, .building{
+    width: 70%;
+}
+
 mark {
     background-color: var(--bg-color);
     font-weight: bold;
@@ -899,9 +907,9 @@ main#contact ul {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 5vmin;
+    font-size: 28px;
     color: var(--yellow-color);
-    margin-top: 7vmin;
+    margin-top: 70px;
     margin-bottom: 0;
 }
 
@@ -913,7 +921,7 @@ main#contact ul {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 3vmin;
+    font-size: 18px;
     color: var(--yellow-color);
     margin-top: 1vmin;
 }
@@ -922,8 +930,11 @@ main#contact ul {
     column-count: 2;
     column-gap: 0;
     line-height: 0;
+    margin: 0 50px;
 }
-
+.sub-pic-gallery img{
+    padding: 10px;
+}
 sub-pic-gallery img {
     position: relative;
 }
@@ -1024,7 +1035,7 @@ sub-pic-gallery img {
 
     .second .museum {
         width: 100%;
-        margin-bottom: 0;
+        padding: 0 10px;
 
     }
 
@@ -1129,7 +1140,7 @@ sub-pic-gallery img {
     .yellow-heading,
     .red-heading,
     main#event p.longDes,
-    main#event p.quote {
+    main#event p.quote, .sub-name {
         width: 100%;
     }
 
@@ -1180,6 +1191,14 @@ sub-pic-gallery img {
         padding-left: 7px;
     }
 
+    .gallery-container, .sub-pic-gallery{
+        margin: 0 10px;
+    }
 
+    #event img.evimg{
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+    }
 
 }

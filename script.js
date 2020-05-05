@@ -100,16 +100,17 @@ if (document.querySelector("#calendar")) {
 
         section.appendChild(h2);
 
-        const filter = document.createElement("img");
+        /*const filter = document.createElement("img");
         filter.src = "icons/filter-small.png";
-        filter.classList.add("contact-icon");
+        filter.classList.add("contact-icon");*/
         /*filter.classList.add("filter-btn");*/
-        filter.addEventListener("click", showFilter);
+
+        document.querySelector(".contact-icon").addEventListener("click", showFilter);
 
         function showFilter(data) {
             modal.classList.remove("hide");
         }
-        section.appendChild(filter);
+        /*section.appendChild(filter);*/
         document.querySelector("#calendar").appendChild(section);
 
         const eventSection = document.createElement("section");

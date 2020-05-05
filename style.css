@@ -691,6 +691,7 @@ footer h4 {
 }
 
 /*MODAL*/
+
 .show {
     display: block;
 }
@@ -717,7 +718,7 @@ footer h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 25px;
-    width: 80%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     /*border: 2px solid var(--yellow-color);*/
@@ -728,11 +729,13 @@ footer h4 {
     cursor: pointer;
 }
 
-img.cross {
-    /*display:block;
-    margin-left: auto;
-    margin-right: auto;*/
-    float: right;
+.first img.when{
+    margin-top: 0;
+}
+
+.modal-content h2{
+    margin-bottom: 10px;
+    margin-top: 25px;
 }
 
 .modal-btn {
@@ -749,6 +752,7 @@ img.cross {
     margin-bottom: 50px;
     cursor: pointer;
     transition: .5s;
+    justify-content: flex-end;
 }
 
 /*SLIDER - price, filter*/
@@ -775,7 +779,6 @@ img.cross {
     height: 20px;
     background: var(--text-color);
     cursor: pointer;
-    border-radius: 50%;
 }
 
 .priceslider::-moz-range-thumb {
@@ -785,7 +788,7 @@ img.cross {
     cursor: pointer;
 }
 
-/*FILTER - dropdowns, datepicker*/
+/*FILTER - dropdowns, datepicker, checkboxes*/
 #location,
 #ddartists {
     cursor: pointer;
@@ -796,6 +799,12 @@ img.cross {
 .datepicker {
     border: 1px solid var(--text-color);
     color: var(--text-color);
+}
+
+input[type="checkbox" i] {
+    margin: 3px 0 0 20px;
+    border: 1px solid var(--text-color);
+    background-color: white;
 }
 
 /*CONTACT PAGE*/

@@ -102,7 +102,7 @@
     </footer>
     <div class="modal-background hide">
         <div class="modal-content">
-
+            <img class="cross" src="icons/cross.png" alt="cross">
             <div class="first">
                 <h2>Where?</h2>
                 <select id="location" name="location">
@@ -110,12 +110,12 @@
                 <h2>Who?</h2>
                 <select id="ddartists" name="ddartists">
                 </select>
-            </div>
-            <div class="second">
-                <img class="cross" src="icons/cross.png" alt="cross">
                 <h2>When?</h2>
                 <input class="datepicker" type="date" name="datepicker">
                 <img class="when" src="icons/calendar.png" alt="calendar">
+            </div>
+
+            <div class="second">
                 <h2>What?</h2>
                 <form action="checkboxes" method="post">
                     <input type="checkbox" name="event-type1" value="vernissage" /> Vernissage
@@ -126,8 +126,8 @@
                 <div class="slidecon">
                     <input type="range" min="1" max="100" value="50" class="priceslider" id="myRange">
                 </div>
-                <button class="modal-btn">APPLY</button>
             </div>
+            <button class="modal-btn">APPLY</button>
         </div>
     </div>
 

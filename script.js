@@ -170,7 +170,7 @@ if (document.querySelector("#calendar")) {
             clone.querySelector(".date").textContent = me.date_of_event;
             clone.querySelector(".artistev").textContent = me.artist;
             clone.querySelector(".type").textContent = me.type_of_event;
-            const event_link = clone.querySelector(".read-more-btn");
+            const event_link = clone.querySelector(".read-more-event");
             if (event_link) {
                 event_link.href += me.id;
             }

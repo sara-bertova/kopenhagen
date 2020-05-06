@@ -72,7 +72,6 @@ body {
 }
 
 .read-more-btn {
-    text-decoration: none;
     color: var(--text-color);
     cursor: pointer;
     text-decoration: underline;

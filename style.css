@@ -55,7 +55,7 @@ header {
     align-items: center;
 }
 
-#logo {
+#logo, #logo-filled {
     margin-left: 25px;
 
 }
@@ -323,7 +323,6 @@ h2:after {
     text-align: center;
     justify-content: center;
 }
-
 .alphabet > p {
     text-align: center;
     margin: 5px 10px;
@@ -332,15 +331,12 @@ h2:after {
     cursor: pointer;
     transition: .2s;
 }
-
 .alphabet > p:hover {
     color: var(--tex-color);
 }
-
 .alphabet-selected {
     color: var(--text-color);
 }
-
 .alphabet-other {
     color: white;
 }
@@ -544,6 +540,17 @@ footer {
 .filter {
     transition: 0.5s ease;
     cursor: pointer;
+}
+
+.read-more-event{
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.read-more-event:hover{
+    transform: scale(1.1);
+    filter: brightness(105%);
 }
 
 .contact-icon:hover,

@@ -1474,10 +1474,12 @@ sub-pic-gallery img {
         padding: 20px;
         margin: 0;
     }
-    #event span{
+
+    #event span {
         margin-bottom: 10px;
     }
-    #event span.when-data{
+
+    #event span.when-data {
         margin-bottom: 0;
     }
 }

@@ -249,6 +249,7 @@ img {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+    cursor: pointer;
 }
 
 .active {
@@ -721,7 +722,7 @@ footer h4 {
     text-align: right;
 }
 
-#event span {
+#event span, mark.web-data {
     text-align: left;
     align-self: center;
 }
@@ -1469,5 +1470,10 @@ sub-pic-gallery img {
         padding: 20px;
         margin: 0;
     }
-
+    #event span{
+        margin-bottom: 10px;
+    }
+    #event span.when-data{
+        margin-bottom: 0;
+    }
 }

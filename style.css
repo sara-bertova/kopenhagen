@@ -1058,6 +1058,42 @@ sub-pic-gallery img {
         column-count: 2;
     }
 
+    .modal-content {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 25px;
+        height: auto;
+        margin-left: 0;
+        margin-top: 100px;
+    }
+    .modal-btn, .cross {
+        grid-column: 2;
+    }
+    .modal-btn{
+        grid-row: 5;
+    }
+    .cross{
+        grid-row: 1;
+    }
+    .filter-when{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .filter-what{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .filter-howmuch{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .filter-who{
+        grid-column: 1;
+        grid-row: 5;
+    }
+
+}
+@media only screen and (max-width: 900px) {
+
 }
 @media only screen and (max-width: 800px) {
     #logo {
@@ -1129,37 +1165,7 @@ sub-pic-gallery img {
         width: 80%;
     }
 
-    .modal-content {
-        grid-template-columns: 1fr 1fr;
-        column-gap: 25px;
-        height: 80%;
-        margin-left: 0;
-    }
-    .modal-btn, .cross {
-        grid-column: 2;
-    }
-    .modal-btn{
-        grid-row: 5;
-    }
-    .cross{
-        grid-row: 1;
-    }
-    .filter-when{
-        grid-column: 1;
-        grid-row: 2;
-    }
-    .filter-what{
-        grid-column: 1;
-        grid-row: 4;
-    }
-    .filter-howmuch{
-        grid-column: 1;
-        grid-row: 3;
-    }
-    .filter-who{
-        grid-column: 1;
-        grid-row: 5;
-    }
+
 }
 @media only screen and (max-width: 600px) {
     .sign-up-section {
@@ -1246,8 +1252,8 @@ sub-pic-gallery img {
 
     .modal-content {
         grid-template-columns: 1fr;
-        column-gap: 25px;
-        height: 90%;
+        height: auto;
+        margin-top: 0;
     }
 
     .modal-btn, .cross {

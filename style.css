@@ -406,7 +406,7 @@ mark {
     background-color: var(--bg-color);
 }
 
-.noartistdata{
+.noartistdata {
     display: none;
     text-align: center;
     letter-spacing: 2px;
@@ -713,6 +713,7 @@ footer h4 {
 .show {
     display: block;
 }
+
 .hide {
     display: none;
 }
@@ -727,6 +728,7 @@ footer h4 {
     background-color: rgba(0, 0, 0, 0.7);
     overflow: auto;
 }
+
 .modal-content {
     background-color: #ffffff;
     margin: 1em;
@@ -745,11 +747,13 @@ footer h4 {
     transform: translate(-50%, -50%);
 }
 
-.modal-btn, .cross {
+.modal-btn,
+.cross {
     cursor: pointer;
     grid-column: 4;
 }
-.cross{
+
+.cross {
     justify-self: end;
 }
 
@@ -771,31 +775,32 @@ footer h4 {
 
 }
 
-.filter-where{
+.filter-where {
     grid-column: 1;
     grid-row: 1;
 
 }
 
-.filter-who{
+.filter-who {
     grid-column: 2;
     grid-row: 1;
 }
 
-.filter-when{
+.filter-when {
     grid-column: 3;
     grid-row: 1;
 }
+
 .filter-when img {
     margin-top: 0;
 }
 
-.filter-what{
+.filter-what {
     grid-column: 2;
     grid-row: 2;
 }
 
-.filter-howmuch{
+.filter-howmuch {
     grid-column: 3;
     grid-row: 2;
 }
@@ -824,6 +829,7 @@ footer h4 {
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
+
 .priceslider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -832,6 +838,7 @@ footer h4 {
     background: var(--yellow-color);
     cursor: pointer;
 }
+
 .priceslider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -863,7 +870,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-lable{
+lable {
     margin-right: 10px;
 }
 
@@ -877,6 +884,7 @@ main#contact {
 .first {
     grid-column: 1;
 }
+
 .first img {
     margin-top: 46px;
 }
@@ -884,6 +892,7 @@ main#contact {
 .second {
     grid-column: 2;
 }
+
 .second img {
     margin-bottom: 10px;
     margin-top: 30px;
@@ -923,6 +932,7 @@ main#contact ul {
     margin-bottom: 15px;
     transition: .2s;
 }
+
 .pic-gallery:hover {
     opacity: 0.5;
 }
@@ -943,10 +953,12 @@ main#contact ul {
     margin-top: 10px;
     font-weight: bold;
 }
+
 .gal-name {
     font-size: 23px;
     margin-bottom: 0;
 }
+
 .gal-date {
     font-size: 2vmin;
 }
@@ -964,6 +976,7 @@ main#contact ul {
     margin-top: 70px;
     margin-bottom: 0;
 }
+
 .sub-date {
     display: flex;
     width: 60%;
@@ -983,9 +996,11 @@ main#contact ul {
     line-height: 0;
     margin: 0 50px;
 }
+
 .sub-pic-gallery img {
     padding: 10px;
 }
+
 sub-pic-gallery img {
     position: relative;
 }
@@ -994,6 +1009,7 @@ sub-pic-gallery img {
     width: 100%;
     height: auto;
 }
+
 .sub-gallery img {
     width: 100%;
     height: auto;
@@ -1009,6 +1025,7 @@ sub-pic-gallery img {
         grid-column: 1;
         grid-row: 1;
     }
+
     .second {
         grid-column: 1;
         grid-row: 2;
@@ -1019,31 +1036,37 @@ sub-pic-gallery img {
         column-gap: 25px;
     }
 
-    .modal-btn, .cross {
+    .modal-btn,
+    .cross {
         grid-column: 3;
     }
-    .modal-btn{
+
+    .modal-btn {
         grid-row: 3;
     }
 
-    .filter-when{
+    .filter-when {
         grid-column: 1;
         grid-row: 2;
     }
-    .filter-what{
+
+    .filter-what {
         grid-column: 2;
         grid-row: 2;
     }
-    .filter-howmuch{
+
+    .filter-howmuch {
         grid-column: 1;
         grid-row: 3;
     }
+
     #event p.longDes {
         column-count: 2;
     }
 
 
 }
+
 @media only screen and (max-width: 1000px) {
     .gallery-container {
         column-count: 3;
@@ -1065,36 +1088,44 @@ sub-pic-gallery img {
         margin-left: 0;
         margin-top: 100px;
     }
-    .modal-btn, .cross {
+
+    .modal-btn,
+    .cross {
         grid-column: 2;
     }
-    .modal-btn{
+
+    .modal-btn {
         grid-row: 5;
     }
-    .cross{
+
+    .cross {
         grid-row: 1;
     }
-    .filter-when{
+
+    .filter-when {
         grid-column: 1;
         grid-row: 2;
     }
-    .filter-what{
+
+    .filter-what {
         grid-column: 1;
         grid-row: 4;
     }
-    .filter-howmuch{
+
+    .filter-howmuch {
         grid-column: 1;
         grid-row: 3;
     }
-    .filter-who{
+
+    .filter-who {
         grid-column: 1;
         grid-row: 5;
     }
 
 }
-@media only screen and (max-width: 900px) {
 
-}
+@media only screen and (max-width: 900px) {}
+
 @media only screen and (max-width: 800px) {
     #logo {
         margin-left: auto;
@@ -1102,6 +1133,7 @@ sub-pic-gallery img {
         margin-bottom: 20px;
         width: 100%;
     }
+
     nav {
         grid-row: 2;
         margin-left: auto;
@@ -1167,11 +1199,13 @@ sub-pic-gallery img {
 
 
 }
+
 @media only screen and (max-width: 600px) {
     .sign-up-section {
         grid-template-columns: 1fr;
         align-items: center;
     }
+
     .hole {
         width: 250px;
         height: 250px;
@@ -1179,6 +1213,7 @@ sub-pic-gallery img {
         margin-right: 0px;
 
     }
+
     .sign-up-section h3 {
         font-size: 35px;
         grid-column: 1;
@@ -1186,6 +1221,7 @@ sub-pic-gallery img {
         text-align: center;
 
     }
+
     .sign-up-section h4 {
         font-size: 20px;
         grid-column: 1;
@@ -1197,12 +1233,14 @@ sub-pic-gallery img {
     footer {
         grid-template-columns: 1fr;
     }
+
     .contact-icons {
         grid-column: 1;
         grid-row: 4;
         margin-bottom: 5px;
         margin-top: 10px;
     }
+
     footer h3 {
         margin-right: auto;
         margin-left: auto;
@@ -1210,6 +1248,7 @@ sub-pic-gallery img {
         grid-column: 1;
         text-align: center;
     }
+
     footer h4 {
         margin-right: auto;
         margin-left: auto;
@@ -1256,30 +1295,37 @@ sub-pic-gallery img {
         margin-top: 0;
     }
 
-    .modal-btn, .cross {
+    .modal-btn,
+    .cross {
         grid-column: 1;
     }
-    .modal-btn{
+
+    .modal-btn {
         grid-row: 6;
+        margin-top: 10px;
     }
 
-    .filter-when{
+    .filter-when {
         grid-column: 1;
         grid-row: 2;
     }
-    .filter-what{
+
+    .filter-what {
         grid-column: 1;
         grid-row: 4;
     }
-    .filter-howmuch{
+
+    .filter-howmuch {
         grid-column: 1;
         grid-row: 3;
     }
-    .filter-who{
+
+    .filter-who {
         grid-column: 1;
         grid-row: 5;
     }
 }
+
 @media only screen and (max-width: 400px) {
     .text {
         font-size: 20px;

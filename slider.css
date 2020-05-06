@@ -13,42 +13,47 @@ body {
     font-family: var(--primary-font);
     color: var(--text-color);
 }
+
 * {
     box-sizing: border-box;
 }
 
-.art-slider, .cal-slider{
+.art-slider,
+.cal-slider {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.cal-slider{
-  margin-top: 20px;
+.cal-slider {
+    margin-top: 20px;
 }
 
 /*ARTIST SLIDER*/
-.artist-item{
+.artist-item {
     background: white;
     height: 350px;
 }
-.artist-item-top{
+
+.artist-item-top {
     height: 250px;
     padding-top: 15%;
 }
-.artist-img-holder{
+
+.artist-img-holder {
     width: 200px;
     height: 30px;
     margin-left: auto;
     margin-right: auto;
 
 }
-.artist-img{
+
+.artist-img {
     border-radius: 50%;
 
 }
 
-.artist-item-bottom{
+.artist-item-bottom {
     width: auto;
     height: 100px;
     background-color: var(--yellow-color);
@@ -57,82 +62,94 @@ body {
     padding: 10px;
 
 }
-.artist-name{
+
+.artist-name {
     border-bottom: 2px solid var(--text-color);
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 5px;
-    width: 70%
+    width: 70%;
 }
-.read-more-btn{
+
+.read-more-btn {
     text-decoration: none;
     color: var(--text-color);
     cursor: pointer;
     text-decoration: underline;
     transition: .5s;
 }
-.read-more-btn:hover{
+
+.read-more-btn:hover {
     color: var(--red-color);
 }
 
 /*CALENDAR SLIDER*/
-.calendar-item{
+.calendar-item {
     background: #D2E2F4;
     height: 425px;
 }
-.calendar-item-top{
+
+.calendar-item-top {
     height: 175px;
     padding-top: 15%;
 }
-.calendar-item-bottom{
+
+.calendar-item-bottom {
     width: auto;
     height: 150px;
     text-align: center;
     align-items: center;
 }
 
-ul.slick-dots{
+ul.slick-dots {
     margin-bottom: 50px;
 }
 
 .slick-slide {
     margin: 0px 20px 50px 20px;
 }
+
 .slick-slide img {
     width: 100%;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
 }
 
-img.artimg{
+img.artimg {
     width: 75%;
     border-radius: 50%;
 }
 
-div.calendar-item-top{
+div.calendar-item-top {
     padding-top: 0;
 }
+
 .slick-prev:before,
 .slick-next:before {
     color: black;
 }
+
 .slick-slide {
     transition: all ease-in-out .3s;
     opacity: .2;
 }
+
 .slick-active {
     opacity: .9;
 }
+
 .slick-current {
     opacity: 1;
 }
 
 
 
-@media only screen and (max-width: 400px){
-    .calendar-item-top{
+@media only screen and (max-width: 400px) {
+    .calendar-item-top {
         height: 110px;
     }
-    .calendar-item{
+
+    .calendar-item {
         height: 350px;
     }
+}

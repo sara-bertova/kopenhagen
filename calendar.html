@@ -120,24 +120,19 @@
             <div class="filter-when">
                 <h3 class="modal-heading">When?</h3>
                 <input class="datepicker" type="date" name="datepicker">
-                <!--<img class="when" src="icons/calendar.png" alt="calendar">-->
             </div>
 
             <div class="filter-what">
                 <h3 class="modal-heading">What?</h3>
-                <form action="checkboxes" method="post">
-                    <div class="what-checkboxs">
+                <form class="what-checkboxs" action="checkboxes" method="post">
+                    <input type="checkbox" class="what-checkbox" name="event-type1" value="vernissage">
+                    <lable for="eventtype1">Vernissage</lable>
 
-                        <input type="checkbox" class="what-checkbox" name="event-type1" value="vernissage">
-                        <lable for="eventtype1">Vernissage</lable>
+                    <input type="checkbox" class="what-checkbox" name="event-type2" value="art-exhibition">
+                    <lable for="eventtype2">Art exhibition</lable>
 
-                        <input type="checkbox" class="what-checkbox" name="event-type2" value="art-exhibition">
-                        <lable for="eventtype2">Art exhibition</lable>
-
-                        <input type="checkbox" class="what-checkbox" name="event-type3" value="music">
-                        <lable for="eventtype3">Music</lable>
-
-                    </div>
+                    <input type="checkbox" class="what-checkbox" name="event-type3" value="music">
+                    <lable for="eventtype3">Music</lable>
                 </form>
             </div>
 

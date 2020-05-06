@@ -722,7 +722,7 @@ footer h4 {
     text-align: right;
 }
 
-#event span, mark.web-data {
+#event span, a.website-link {
     text-align: left;
     align-self: center;
 }

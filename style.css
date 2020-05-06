@@ -55,7 +55,8 @@ header {
     align-items: center;
 }
 
-#logo, #logo-filled {
+#logo,
+#logo-filled {
     margin-left: 25px;
 
 }
@@ -323,6 +324,7 @@ h2:after {
     text-align: center;
     justify-content: center;
 }
+
 .alphabet > p {
     text-align: center;
     margin: 5px 10px;
@@ -331,12 +333,15 @@ h2:after {
     cursor: pointer;
     transition: .2s;
 }
+
 .alphabet > p:hover {
     color: var(--tex-color);
 }
+
 .alphabet-selected {
     color: var(--text-color);
 }
+
 .alphabet-other {
     color: white;
 }
@@ -392,6 +397,7 @@ h1 {
     align-self: flex-end;
 
 }
+
 .sign-up-section h4 {
     font-size: 30px;
     grid-column: 1 / 3;
@@ -402,6 +408,7 @@ h1 {
     margin-right: auto;
     text-align: end;
 }
+
 .sign-up-section-submit-email {
     grid-column: 1 / 3;
     grid-row: 3;
@@ -421,6 +428,7 @@ h1 {
 
     font-family: var(--primary-font);
 }
+
 .submitBtn {
     background: var(--yellow-color);
     color: white;
@@ -448,6 +456,7 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
+
 footer {
     height: 160px;
     display: grid;
@@ -464,6 +473,7 @@ footer {
     align-self: flex-end;
     margin-bottom: 30px;
 }
+
 .contact-icons-event {
     grid-column: 2 / 3;
     align-self: flex-start;
@@ -476,17 +486,6 @@ footer {
 .filter {
     transition: 0.5s ease;
     cursor: pointer;
-}
-
-.read-more-event{
-    color: var(--text-color);
-    text-decoration: none;
-    cursor: pointer;
-    transition: .5s ease;
-}
-.read-more-event:hover{
-    transform: scale(1.1);
-    filter: brightness(105%);
 }
 
 .contact-icon:hover,
@@ -508,6 +507,7 @@ footer h3 {
     margin-right: 200px;
     margin-bottom: 0;
 }
+
 footer h4 {
     font-size: 20px;
     grid-column: 2;
@@ -518,6 +518,7 @@ footer h4 {
     margin-bottom: 0;
 
 }
+
 .footer-submit-email {
     grid-column: 2;
     grid-row: 3;
@@ -632,67 +633,77 @@ footer h4 {
 }
 
 /*SINGLE EVENT PAGE*/
-#event{
+#event {
     text-align: left;
 }
-.event-info{
+
+.event-info {
     margin-top: 30px;
     display: grid;
     grid-template-columns: .3fr 1fr;
     margin-left: auto;
     margin-right: auto;
 }
-.event-info > p{
+
+.event-info > p {
     text-align: right;
 }
-.location p{
+
+.location p {
     grid-column: 1;
 }
-.location span{
+
+.location span {
     grid-column: 2;
 }
 
-.date{
+.date {
     grid-column: 1;
 }
-.date span{
+
+.date span {
     grid-column: 2;
 }
 
-.price{
+.price {
     display: none;
     grid-column: 1;
 }
-.price span{
+
+.price span {
     grid-column: 2;
     text-align: left;
 }
 
-.oh{
+.oh {
     grid-column: 1;
 }
-.oh span{
+
+.oh span {
     grid-column: 2;
 }
 
-.e-mail{
+.e-mail {
     grid-column: 1;
 }
-.e-mail span{
+
+.e-mail span {
     grid-column: 2;
 }
 
-.phone{
+.phone {
     grid-column: 1;
 }
-.phone span{
+
+.phone span {
     grid-column: 2;
 }
 
-.web{
+.web {
     grid-column: 1;
 }
-.web span mark{
+
+.web span mark {
     grid-column: 2;
 }
 
@@ -710,7 +721,8 @@ footer h4 {
     padding-bottom: 2px;
     text-align: right;
 }
-#event span{
+
+#event span {
     text-align: left;
     align-self: center;
 }
@@ -727,21 +739,25 @@ footer h4 {
     column-gap: 50px;
     text-align: justify;
 }
+
 #event p.longDes,
 #event p.quote {
     padding-top: 20px;
 }
+
 #event p.quote {
     font-size: 28px;
     text-align: center;
     line-height: 30px;
     padding: 5px 20px;
 }
+
 #event img.evimg {
     width: 80%;
     display: block;
     margin: 20px auto;
 }
+
 #event img.gallogo {
     width: 100px;
     margin-left: auto;
@@ -749,6 +765,7 @@ footer h4 {
     display: block;
     margin-top: 20px;
 }
+
 #event h3 {
     color: var(--light-blue);
 }
@@ -1178,7 +1195,9 @@ sub-pic-gallery img {
 @media only screen and (max-width: 900px) {}
 
 @media only screen and (max-width: 800px) {
-    #logo, #logo-filled {
+
+    #logo,
+    #logo-filled {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
@@ -1248,22 +1267,25 @@ sub-pic-gallery img {
         width: 80%;
     }
 
-    .event-info{
+    .event-info {
         grid-template-columns: 1fr;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
+
     #event p {
         width: auto;
         text-align: center;
         padding: 0;
         margin: 0
     }
-    #event span{
+
+    #event span {
         text-align: center;
     }
-    .contact-icons-event{
+
+    .contact-icons-event {
         grid-column: 1 / 2;
         text-align: center;
     }

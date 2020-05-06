@@ -132,7 +132,17 @@ div.calendar-item-top {
     opacity: 1;
 }
 
+.read-more-event {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s ease;
+}
 
+.read-more-event:hover {
+    transform: scale(1.1);
+    filter: brightness(105%);
+}
 
 @media only screen and (max-width: 400px) {
     .calendar-item-top {

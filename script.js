@@ -350,7 +350,7 @@ function showArt(art, artistAlphabet) {
 
         var copy = slider_template.cloneNode(true);
 
-        const artis_link = copy.querySelector(".read-more-btn");
+        const artis_link = copy.querySelector(".read-more-event");
         if (artis_link) {
             artis_link.href += art.id;
         }

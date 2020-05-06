@@ -554,7 +554,7 @@ footer {
 .filter {
     display: block;
     margin-left: auto;
-    margin-right: 50px;
+    margin-right: auto;
 }
 
 footer h3 {

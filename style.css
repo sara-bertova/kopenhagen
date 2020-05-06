@@ -722,8 +722,12 @@ footer h4 {
     text-align: right;
 }
 
-#event span, a.website-link {
+#event span {
     text-align: left;
+    align-self: center;
+}
+
+a.website-link {
     align-self: center;
 }
 

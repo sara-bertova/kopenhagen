@@ -341,65 +341,10 @@ h2:after {
     color: white;
 }
 
-main#event p {
-    color: var(--light-blue);
-    font-weight: bold;
-    text-align: left;
-    padding-bottom: 2px;
-}
-
-#event p span,
-#event p.longDes,
-#event a.web {
-    color: var(--text-color);
-    font-weight: normal;
-}
-
-#event p.longDes {
-    column-count: 3;
-    column-gap: 50px;
-    text-align: justify;
-}
-
-#event p.longDes,
-#event p.quote {
-    padding-top: 20px;
-}
-
-#event p.quote {
-    font-size: 28px;
-    text-align: center;
-    line-height: 30px;
-    padding: 5px 20px;
-}
-
-#event img.evimg {
-    width: 80%;
-    display: block;
-    margin: 20px auto;
-}
-
-#event img.gallogo {
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-top: 20px;
-}
-
-#event h3 {
-    color: var(--light-blue);
-}
-
 h1 {
     color: var(--yellow-color);
     text-align: right;
     margin-right: 30px;
-}
-
-mark {
-    font-weight: bold;
-    background-color: var(--bg-color);
 }
 
 .noartistdata {
@@ -447,7 +392,6 @@ mark {
     align-self: flex-end;
 
 }
-
 .sign-up-section h4 {
     font-size: 30px;
     grid-column: 1 / 3;
@@ -458,7 +402,6 @@ mark {
     margin-right: auto;
     text-align: end;
 }
-
 .sign-up-section-submit-email {
     grid-column: 1 / 3;
     grid-row: 3;
@@ -478,7 +421,6 @@ mark {
 
     font-family: var(--primary-font);
 }
-
 .submitBtn {
     background: var(--yellow-color);
     color: white;
@@ -506,7 +448,6 @@ mark {
     margin-left: auto;
     margin-right: auto;
 }
-
 footer {
     height: 160px;
     display: grid;
@@ -523,15 +464,10 @@ footer {
     align-self: flex-end;
     margin-bottom: 30px;
 }
-
 .contact-icons-event {
-    grid-column: 1;
-    grid-row: 1 / 4;
-    padding-left: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    align-self: flex-end;
-    margin-bottom: 30px;
+    grid-column: 2 / 3;
+    align-self: flex-start;
+    margin-bottom: 10px;
     margin-top: 10px;
     text-align: left;
 }
@@ -572,7 +508,6 @@ footer h3 {
     margin-right: 200px;
     margin-bottom: 0;
 }
-
 footer h4 {
     font-size: 20px;
     grid-column: 2;
@@ -583,7 +518,6 @@ footer h4 {
     margin-bottom: 0;
 
 }
-
 .footer-submit-email {
     grid-column: 2;
     grid-row: 3;
@@ -687,24 +621,6 @@ footer h4 {
     display: none;
 }
 
-.about-event {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-#event p {
-    padding: 0;
-    margin: 5px auto 0 auto;
-}
-
-#event p span {
-    padding-left: 25px;
-}
-
-#event a.web {
-    padding: 0;
-}
-
 .single-art-about-heading {
     color: var(--yellow-color);
     letter-spacing: 2px;
@@ -713,6 +629,133 @@ footer h4 {
 
 .art-images {
     display: none;
+}
+
+/*SINGLE EVENT PAGE*/
+#event{
+    text-align: left;
+}
+.event-info{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+}
+.event-info > p{
+    text-align: right;
+}
+.location p{
+    grid-column: 1;
+}
+.location span{
+    grid-column: 2;
+}
+
+.date{
+    grid-column: 1;
+}
+.date span{
+    grid-column: 2;
+}
+
+.price{
+    display: none;
+    grid-column: 1;
+}
+.price span{
+    grid-column: 2;
+    text-align: left;
+}
+
+.oh{
+    grid-column: 1;
+}
+.oh span{
+    grid-column: 2;
+}
+
+.e-mail{
+    grid-column: 1;
+}
+.e-mail span{
+    grid-column: 2;
+}
+
+.phone{
+    grid-column: 1;
+}
+.phone span{
+    grid-column: 2;
+}
+
+.web{
+    grid-column: 1;
+}
+.web span mark{
+    grid-column: 2;
+}
+
+.about-event {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#event p {
+    padding: 0;
+    margin: 5px auto 0 auto;
+    color: var(--light-blue);
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 2px;
+    text-align: right;
+}
+#event span{
+    text-align: left;
+    align-self: center;
+}
+
+#event p span,
+#event p.longDes,
+#event a.web {
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+#event p.longDes {
+    column-count: 3;
+    column-gap: 50px;
+    text-align: justify;
+}
+#event p.longDes,
+#event p.quote {
+    padding-top: 20px;
+}
+#event p.quote {
+    font-size: 28px;
+    text-align: center;
+    line-height: 30px;
+    padding: 5px 20px;
+}
+#event img.evimg {
+    width: 80%;
+    display: block;
+    margin: 20px auto;
+}
+#event img.gallogo {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20px;
+}
+#event h3 {
+    color: var(--light-blue);
+}
+
+mark {
+    font-weight: bold;
+    background-color: var(--bg-color);
 }
 
 /*MODAL*/
@@ -1072,6 +1115,7 @@ sub-pic-gallery img {
     }
 
 
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -1134,7 +1178,7 @@ sub-pic-gallery img {
 @media only screen and (max-width: 900px) {}
 
 @media only screen and (max-width: 800px) {
-    #logo {
+    #logo, #logo-filled {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
@@ -1202,6 +1246,26 @@ sub-pic-gallery img {
 
     .ads-img {
         width: 80%;
+    }
+
+    .event-info{
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #event p {
+        width: auto;
+        text-align: center;
+        padding: 0;
+        margin: 0
+    }
+    #event span{
+        text-align: center;
+    }
+    .contact-icons-event{
+        grid-column: 1 / 2;
+        text-align: center;
     }
 
 

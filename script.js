@@ -230,16 +230,16 @@ function showSingleEvent(ev) {
 
         copy.querySelector("h2").textContent = ev.title.rendered;
         copy.querySelector("h3").textContent = ev.artist;
-        copy.querySelector(".date span").textContent = ev.date_of_event;
+        copy.querySelector(".when-data").textContent = ev.date_of_event;
         copy.querySelector(".longDes").textContent = ev.long_description;
-        copy.querySelector(".oh span").textContent = ev.opening_hours;
-        copy.querySelector(".e-mail span").textContent = ev.email;
-        copy.querySelector(".phone span").textContent = ev.phone;
-        copy.querySelector(".web span mark").textContent = ev.web;
+        copy.querySelector(".oh-data").textContent = ev.opening_hours;
+        copy.querySelector(".email-data").textContent = ev.email;
+        copy.querySelector(".phone-data").textContent = ev.phone;
+        copy.querySelector(".web-data").textContent = ev.web;
         copy.querySelector(".web").href = ev.web;
         copy.querySelector(".evimg").src = ev.image.guid;
         copy.querySelector(".gallogo").src = ev.logo.guid;
-        copy.querySelector(".location span").textContent = `${ev.gallery}` + ", " + `${ev.address}`;
+        copy.querySelector(".location-data").textContent = `${ev.gallery}` + ", " + `${ev.address}`;
 
         if (ev.quote) {
             copy.querySelector(".quote").textContent = ev.quote;
@@ -247,7 +247,7 @@ function showSingleEvent(ev) {
             copy.querySelector(".quote").style.display = "none";
         }
 
-        if (ev.price) {
+        if (ev.price) { document.querySelector(".price-data").style.display = "block";
             copy.querySelector(".price span").textContent = ev.price;
         } else {
             copy.querySelector(".price").style.display = "none";

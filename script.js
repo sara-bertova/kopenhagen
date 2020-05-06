@@ -123,15 +123,16 @@ if (document.querySelector("#calendar")) {
         section.appendChild(eventSection);
 
         $(eventSection).slick({
-            dots: true,
+            dots: false,
             infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            mobileFirst: true,
             responsive: [{
                     breakpoint: 1000,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
                         dots: true,
                         infinite: true
                     }
@@ -139,9 +140,9 @@ if (document.querySelector("#calendar")) {
                 {
                     breakpoint: 600,
                     settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        dots: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: true,
                         infinite: true
                     }
                     }

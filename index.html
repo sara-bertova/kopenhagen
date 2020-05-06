@@ -129,6 +129,7 @@
                 </a>
             </div>
         </div>
+
     </template>
 
     <template id="alphabet-template">
@@ -142,15 +143,16 @@
     <script type="text/javascript">
         $(document).on('ready', function() {
             $('.artists').slick({
-                dots: true,
+                dots: false,
                 infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                mobileFirst: true,
                 responsive: [{
                         breakpoint: 1000,
                         settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
                             dots: true,
                             infinite: true
                         }
@@ -158,9 +160,9 @@
                     {
                         breakpoint: 600,
                         settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: false,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            dots: true,
                             infinite: true
                         }
                     }

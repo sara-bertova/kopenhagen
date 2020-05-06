@@ -71,16 +71,7 @@ body {
     width: 70%;
 }
 
-.read-more-btn {
-    color: var(--text-color);
-    cursor: pointer;
-    text-decoration: underline;
-    transition: .5s;
-}
 
-.read-more-btn:hover {
-    color: var(--red-color);
-}
 
 /*CALENDAR SLIDER*/
 .calendar-item {

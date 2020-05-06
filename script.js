@@ -236,7 +236,7 @@ function showSingleEvent(ev) {
         copy.querySelector(".email-data").textContent = ev.email;
         copy.querySelector(".phone-data").textContent = ev.phone;
         copy.querySelector(".web-data").textContent = ev.web;
-        copy.querySelector(".web").href = ev.web;
+        copy.querySelector(".website-link").href = ev.web;
         copy.querySelector(".evimg").src = ev.image.guid;
         copy.querySelector(".gallogo").src = ev.logo.guid;
         copy.querySelector(".location-data").textContent = `${ev.gallery}` + ", " + `${ev.address}`;

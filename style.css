@@ -161,16 +161,15 @@ nav a:hover {
     color: var(--red-color);
 }
 
-#event a.web {
-    transition: .5s;
+#event a.website-link {
     text-decoration: none;
 }
 
-#event a.web span mark {
+#event a.website-link span mark {
     transition: .5s;
 }
 
-#event a.web span mark:hover {
+#event a.website-link span mark:hover {
     color: var(--yellow-color);
 
 }
@@ -699,11 +698,11 @@ footer h4 {
     grid-column: 2;
 }
 
-.web {
+.website {
     grid-column: 1;
 }
 
-.web span mark {
+.website span mark {
     grid-column: 2;
 }
 

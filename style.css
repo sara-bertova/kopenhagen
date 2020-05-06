@@ -1038,6 +1038,9 @@ sub-pic-gallery img {
         grid-column: 1;
         grid-row: 3;
     }
+    #event p.longDes {
+        column-count: 2;
+    }
 
 
 }
@@ -1054,9 +1057,6 @@ sub-pic-gallery img {
         margin-right: 50px;
     }
 
-    #event p.longDes {
-        column-count: 2;
-    }
 
     .modal-content {
         grid-template-columns: 1fr 1fr;

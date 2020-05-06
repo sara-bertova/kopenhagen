@@ -9,8 +9,11 @@ if (document.querySelector(".slideshow-container")) {
         })
 
     function handleSlide(jsonData) {
-        jsonData.forEach(createEvents)
+        jsonData.forEach(createEvents);
+        showSlides();
     }
+
+    var slideIndex = 0;
 
     function createEvents(oneEvent) {
         const div = document.createElement("div");
@@ -35,30 +38,35 @@ if (document.querySelector(".slideshow-container")) {
         if (".slideshow-container") {
             document.querySelector(".slideshow-container").appendChild(div);
         }
-        var slideIndex = 0;
-        showSlides();
+    }
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
+    var timeoutShowSlides;
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        timeoutShowSlides = setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+
+    function slideDotClick(index) {
+        slideIndex = index - 1;
+        clearTimeout(timeoutShowSlides);
+        showSlides();
     }
 }
-
 
 //FILTER
 const modal = document.querySelector(".modal-background");
@@ -99,11 +107,6 @@ if (document.querySelector("#calendar")) {
         h2.classList.add("blue-heading");
 
         section.appendChild(h2);
-
-        /*const filter = document.createElement("img");
-        filter.src = "icons/filter-small.png";
-        filter.classList.add("contact-icon");*/
-        /*filter.classList.add("filter-btn");*/
 
         document.querySelector(".filter").addEventListener("click", showFilter);
 
@@ -247,7 +250,8 @@ function showSingleEvent(ev) {
             copy.querySelector(".quote").style.display = "none";
         }
 
-        if (ev.price) { document.querySelector(".price-data").style.display = "block";
+        if (ev.price) {
+            document.querySelector(".price-data").style.display = "block";
             copy.querySelector(".price span").textContent = ev.price;
         } else {
             copy.querySelector(".price").style.display = "none";
@@ -333,9 +337,9 @@ function handleArtistsData(jsonData, artistAlphabet) {
     jsonData.forEach(function (item, index) {
         showItemCount = showItemCount + showArt(item, artistAlphabet);
     });
-    if(showItemCount){
+    if (showItemCount) {
         document.querySelector(".noartistdata").style.display = "none";
-    }else{
+    } else {
         document.querySelector(".noartistdata").style.display = "block";
     }
 }

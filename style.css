@@ -859,11 +859,12 @@ footer h4 {
 }
 
 input[type="checkbox"] {
-    /*margin: 3px 0 0 20px;
-    border: 1px solid var(--text-color);
-    background-color: white;*/
     outline: none;
     cursor: pointer;
+}
+
+lable{
+    margin-right: 10px;
 }
 
 /*CONTACT PAGE*/

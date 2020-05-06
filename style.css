@@ -1115,9 +1115,14 @@ sub-pic-gallery img {
         display: none;
     }
 
+    #event p.quote {
+        font-size: 23px;
+        line-height: 25px;
+    }
+
+
     #event p.longDes {
-        column-count: 2;
-        column-gap: 30px;
+        column-count: 1;
     }
 
     .ads-img {
@@ -1221,14 +1226,6 @@ sub-pic-gallery img {
         column-count: 1;
     }
 
-    #event p.quote {
-        font-size: 23px;
-        line-height: 25px;
-    }
-
-    #event p.longDes {
-        column-count: 1;
-    }
 
     .short-description,
     p.about-artist,
